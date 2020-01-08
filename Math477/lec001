@@ -1,0 +1,70 @@
+Tue  7 Jan 2020 09:27:33 PST
+Math 477 Lecture 1
+
+
+call option:
+the right to buy a share of a stock for a fixed price on a fixed date
+question: what is this option worth?
+answer: given by Black and Scholes in the 1970s
+
+we will answer this question using an elementary approach (binomial trees)
+this could be done more rigourously however with PDEs (heat equation) or SDEs
+(stochastic differential equations)
+
+chapter 1: random variables
+
+in class problem:
+3 random variables: X,Y,Z
+EX=1,EY=2,EZ=0
+VARX=1,VARY=2,VARZ=1
+COV(X,Y) = 1
+COV(X,Z) = 0
+COV(Y,Z) = 0
+
+find a,b,c,d st. W=a+bX+cY+dZ has these properties:
+EW = 3
+COV(W,X) = 1
+COV(W,Y) = 3/2
+VARW = 2
+
+EW = a+b1+c2+d*0 = a+b+2c = 3
+COV(W,X) = COV(a+bX+cY+dZ,X) = bvar(X,X) + cCOV(Y,X) + dCOV(Z,X)
+= b + c = 1
+
+COV(W,Y) = COV(a+bX+cY+dZ,Y) = bCOV(X,Y) + cVARY + dCOV(Z,Y)
+= b + 2c = 3/2
+
+VARW = COV(a+bX+cY+dZ,a+bX+cY+dZ) =
+b^2 + 2c^2 + d^2 + 2bc = 2
+
+
+4 equations:
+b^2 + 2c^2 + d^2 + 2bc = 2;
+b + 2c = 3/2;
+b + c = 1;
+a+b+2c = 3;
+==> b=c=1/2
+==> a=3/2
+==> d = ±√3/2
+
+
+
+
+
+
+
+
+chapter 2: multivariate normal random variables
+N(µ,ø^2)
+
+NOTE: Quas like to put the variance in as a parameter into N rather than sd
+
+
+theorem:
+consider monotone h
+and random vars X and Y
+X = h(Y)
+then we have:
+fy(y) = fx(h(y))|h'(y)|
+
+

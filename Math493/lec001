@@ -1,0 +1,88 @@
+Tue  7 Jan 2020 10:27:25 PST
+Math 493 Lecture 1
+
+4 assignments (2 weeks per) 10% each
+final exam: 30%
+project:    30%
+
+project: written report and poster presentation
+(grads do presentation)
+
+model theory = logic + algebra                 (chag-keisler)
+model theory = algebraic geometry - fields     (hodges)
+
+big idea:
+we have a formal language in which we express axioms T
+we then consider the class mod(T) of all structures satisfying the axioms T
+we study the interaction between syntactic properties of T
+and algebraic properties of mod(T)
+
+
+highlights of the course:
+thm: if f:C^n->C^n is an injective polymap then f is surjective
+we do so via looking at finite fields and then extending this result to C
+we will also prove the nullstellensatz which is a major result in algebraic geometry
+we will prove ramseys theorem
+
+
+def: A language (aka signature) L is given by specifying the following data
+A set F of function symbols
+each f in F is associated with number nf called the arity of f
+also a set R of relation symbols
+each has an arity nr
+also a set C of constant symbols
+
+NOTE: we could instead just use relations and write functions and constants as relations
+but this is anoying for us so we won't do this
+
+
+example: say we are studying groups
+we choose the language to have 2 function symbols {*,^(-1)} where * is 2-ary and ^(-1) is 1-ary
+and R = ø (no relations)
+C = {e}   (constants)
+
+NOTE: we don't need the inverse operation but it is convenient to have it
+this is called L_grp
+
+example: to study unital rings: L_rng
+F = {+,*,-}, R = ø, C = {0,1}
+
+this is also the language for studying fields
+
+example: graphs L_graph
+F=ø, R = {E} where E is 2-ary, C = ø
+
+this is also the language of set theory
+in this case the relation is membership
+
+
+
+
+
+structures:
+to make the symbols meaningful we interpret them with structures
+def: let L be a language, an L-structure M is a non empty set m with some other stuff:
+for each n-ary function symbol f
+a function f^M:m^n->m
+for each n-ary relation symbol R, a set R^M≤m^n
+
+
+if G is a group with operation *
+then we can make G into an L_grp-structure
+by setting M=G and so on with the operations and constants
+
+notice none of this requires we have a group so far
+
+
+
+
+
+convention: often we will consider finite tuples (a1,...an) in M^n for some set M
+often we don't care about the length
+so we write abar (this means a finite length tuple)
+we don't want to write M^n anymore in this case
+so we will write abar in M when we actually mean abar in M^n for some unspecified length n
+
+similarly if abar = (a1...an) and f:m^n->m
+then we write f(abar) for f(a1,...an)
+

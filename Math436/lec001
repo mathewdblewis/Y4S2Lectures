@@ -1,0 +1,41 @@
+Mon  6 Jan 2020 10:01:04 PST
+Math 436 manifolds, lecture 1
+
+calculus in R^n:
+
+notation: v~(e)w    (pronounced "v is epsilon close to w)
+this means |v-w|<e
+
+definition: A function f:X->Y is cont at p in X
+if foral e>0, TE. ∂>0 st. q~(e)p => f(q)~(e)f(p)
+
+definition: a function f:U->R^m, U≤R^n open is diff at p in U iff TE. linear L:R^n->R^m
+st. foral e>0 TE. ∂>0 st. q~(∂)p => f(q)~(e|q=p|) f(p)+L(q-p)
+in this case L is called the derivative of f at p, L = Df_p
+
+so the derivative is functions from U to M_(n,m)
+we instead choose to look at the derivative as a map from UxR^n to R^m
+
+
+example: the map that takes square matrix A to A^2
+claim: DSA(H) = AH+HA
+proof: S(A+H) ~(e|H|) S(A)+DSA(H)
+he verifies this
+
+
+
+def: f:U->R^m, U≤R^n open
+∂f/∂ei(p) = Dfp(ei)
+
+
+
+theorem: if the partials all exist then its differentiable at the spot
+theorem: if both mixed partials exist in a neighbourhood of p
+and are cont at p then they are equal
+
+
+chain rule: if f:U->R^m, U open
+g:V->R^j, V open
+if f,g diff at p in U and q in V respectively
+then D(gf)p = Dg(f(p)) * Dfp
+

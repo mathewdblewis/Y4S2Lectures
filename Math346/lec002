@@ -1,0 +1,66 @@
+Wed  8 Jan 2020 08:29:17 PST
+Math 346 Lecture 2
+
+we will rigorously derive the heat equation
+
+conservation of heat equation:
+add up all heat energy over a segment x=a to x=b
+this is given by ∫e(x,t)Adx over x in [a,b]
+
+d/dt ∫e(x,t)Adx = ø(a,t)*A - ø(b,t)*A
+this is because ø is the rightward heat flow at position a and time t
+and the change in the total energy in the segment is
+the derivative of the total energy which is ∫e(x,t)Adx
+
+we then modify it to account for external sources of heat
+d/dt ∫e(x,t)Adx = ø(a,t)*A - ø(b,t)*A + ∫Q(x,t)Adx
+now pull the derivative through the integral
+∫∂/∂t e(x,t)Adx = ø(a,t)*A - ø(b,t)*A + ∫Q(x,t)Adx
+now cancel the A's
+∫∂/∂t e(x,t)dx = ø(a,t) - ø(b,t) + ∫Q(x,t)dx
+now use FTOC (fundamental theorem of calculus) on the right side
+∫∂e/∂t(x,t)dx = -∫∂ø/∂x(x,t)dx + ∫Q(x,t)dx
+thus we have:
+∫[∂e/∂t(x,t)+∂ø/∂x(x,t)-Q(x,t)]dx = 0
+thus integral holds over all intervals [a,b]
+thus we can conclude the integrand is 0, that is:
+∂e/∂t(x,t)+∂ø/∂x(x,t)-Q(x,t) = 0
+stated more compactly: ∂e/∂t+∂ø/∂x = Q
+this works because we assume integrability (he claims, not sure how confident he is)
+
+
+we write e(x,t)=c(x)p(x)u(x,t)
+where u(x,t) is temperature at x, c(x) is specific heat, p(x) is mass density (mass per volume)
+thus we have:
+c(x)p(x)∂u/∂t(x,t) = -∂ø/∂x(x,t)+Q(x,t)
+
+fouriers law of heat conductance: ø = -K0 ∂u/∂x
+K0 is the thermal conductivity constant (measures the ability of material to conduct heat)
+stick that in for ø and get this:
+c(x)p(x)∂u/∂t(x,t) = K0*∂^2ø/∂x^2(x,t)+Q(x,t)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

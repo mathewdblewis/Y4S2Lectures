@@ -1,5 +1,5 @@
 Wed  8 Jan 2020 10:29:21 PST
-Math493 Lec02
+Math493 Lec002
 
 def: let L be a language and let M and N be L-structures
 an L-homomorphism is a function b:M->N

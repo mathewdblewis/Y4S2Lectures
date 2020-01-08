@@ -1,5 +1,5 @@
 Wed  8 Jan 2020 08:29:17 PST
-Math346 Lec02
+Math346 Lec002
 
 we will rigorously derive the heat equation
 

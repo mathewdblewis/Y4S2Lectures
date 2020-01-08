@@ -1,0 +1,78 @@
+Wed  8 Jan 2020 10:29:21 PST
+Math 493 Lec2
+
+def: let L be a language and let M and N be L-structures
+an L-homomorphism is a function b:M->N
+st. foral constant symbols c in L, b(c^m) = c^n
+for each n-ary function symbol f in L, and each a = (a1,...an) in M^n
+b(f^m(a)) = f^n(b(a))
+
+for each n-ary relation R in L and each a in M^n
+we have R^m(a) => R^n(b(a))
+notice we only have one way implication
+to see why, think of graph homomorphism
+in words, we allow ourselves to "fold" the structure onto itself
+
+example: 
+if M and N are L_grp-structures obtained from groups, then an L_grp-hom is just a group hom
+
+
+he says homomorphisms don't preserve enough
+we will find better maps that do this
+
+
+def: let L be a language, M,N L-structures
+an embedding of M into N is an injective L-homomorphism b:M->N
+st. foral symbols R and all a in M, R^m(a) <=> R^n(b(a))
+
+def: an isomorphism is a surjective emmbedding
+
+fact: if a:M->N is an embedding then a is an isomorphism from M to the image of a
+
+example: consider graphs G1 and G2, each with 2 vertices
+G1 has no edge, G2 has an edge
+notice the bijective map from G1 to G2 is a bijective hom but is not an isomorphism
+
+def: if there is an isomorphism from M to N we call M and N isomorphic and write M≈N
+
+
+
+our next goal: use our language to assert properties of the structure
+
+def: let L be a language, the L-terms are the smallest collection of expressions st:
+1:  if C is a constant symbol, then c is a term
+2:  each variable symbol is a term
+3:  if f in L is an n-ary function symbol and t1...tn are L-terms
+    then f(t1,...tn) is an L-term
+
+convention: if t is an L-term and the variable symbols that apear in t
+are a subset of (x1...xm) then we write t(x1...xn)
+this doesn't mean all of the variables actually apear, just a subset
+
+example: in L_grp, here are some terms:
+1, x, *(x,y), *(*(x,`y),*(x,y))         (where `y denotes inverse of y)
+
+usually we write our terms in the more conventional ways, the last one is like so:
+the last one listed above should be (x*y`)*(x*y)
+
+def: let L be a language an M an L-structure
+define for t, an L-term, the interpretation of t in M as follows:
+if t is a constant symbol c, then t^m is interpreted as c^m
+if t is a variable symbol x, then it is interpretted as t^m:M->M is t^m(a) = a
+if t(x) is f(t1(x),...tn(x)) and x has length k then t^m is a function t^M:M^k->M is
+t^M(a) = f^M(t1^M(a),...tn^M(a))
+
+
+example: consider L_grp, consider t(x,y,z) = x*(y`*z)
+if the group is (G,*,`,e) is a group viewed as an Lgrp-structure
+then we can do the interpretation process and get a function
+
+
+def: let language L, the L-formulas are the smallest collection of expressions st:
+1:  foral L-terms t,s, t=s is an L-formula
+2:  foral n-ary relation symbol R, and terms t1...tn, R(t1,,,tn) is a formula
+3:  if t and s are formulas then "t and s" is a formula
+4:  similarly we have or and not and TE. and foral
+
+
+

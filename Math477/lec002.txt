@@ -1,0 +1,104 @@
+Wed  8 Jan 2020 09:31:35 PST
+Math 477 Lec02
+
+recall the pdf of standard normal is fN(x) = 1/√(2π) e^(-x^2/2)
+he talks about the change of variables needed to get distribution N(µ,ø^2)
+
+we will now look at multivariate normals
+
+say X1,X2...Xd are independent N(0,1)
+
+because of independence the density function is the product of marginal densities
+f(x1,x2...xn) = 1/√(πn) e^(-x1^2/2) ... 1/√(πn) e^(-xd^2/2)
+= (2π)^(-d/2) e^(-(x1^2+x2^2+...xd^2)/2)
+= (2π)^(-d/2) e^(-x^Tx/2)
+let X = (x1,x2...xd)
+a multi-variate normal vector is defined by Y=AX+b
+recall X is a collection of independent standard normals
+
+basicall, we take the standard multivariate normal and multiply it by a matrix then add a vector
+compute the pdf of Y
+
+now to find the pdf of Y
+if Y = g(X) and X = h(y)
+then fy(y) = fx(h(y))  det ∂hi(y)/∂yj
+
+fy(y) = 1/√(2π)^d e^(-1/2 h(y)^T*h(y)) * |det(A^-1)|
+= 1/√(2π)^d e^(-1/2 h(y)^T*h(y)) / |detA|
+
+
+now consider the exponent:
+h(y)^T*h(y) = (A^(-1)(y-b))^TA^(-1)(y-b)
+= (y-b)^TA^(-T)A^(-1)(y-b)
+= (y-b)^T (AA^T)^(-1) (y-b)
+
+
+
+so we have:
+fy(y) = 1/√(2π)^d e^(-1/2 (y-b)^T (AA^T)^(-1) (y-b)) / √(det(AA^T))
+notice the density is dependent only on AA^T and b
+that is, we don't need to actually know what A is
+
+
+now find COV(Yi,Yj) = COV(∑Aik*Xk+bi,∑Ajl*Xl+bj)
+= COV(∑Aik*Xk,∑Ajl*Xl)
+= ∑Aik*Ajl*COV(Xk,Xl)      (by bilinearity)
+notice COV(Xk,Xl) = 0 when k≠l and COV(Xk,Xl) = 1 when k=l
+= ∑Aik*Ajk summed over all k
+= ∑Aik*(Akj)^T summed over all k
+= (AA^T)_ij
+thus AA^T is the covariance matrix
+and b = is the mean vector
+
+summary: pdf of multivariate normal is determined by covariance matrix and mean vector
+
+brownian motion:
+a family of random variables
+X0 = 0, X(t+s) ~ Xt + N(0,s)
+x1 = 0+N(0,1), x2 = X1+N(0,1), x3 = x2+N(0,1) etc
+
+what if you know x1 and x3 and want to find x2?
+this is called a brownian bridge
+
+define X' like so:
+x1' = N4
+x3' = aN4+bN5
+x2' = cN4+dN5+eN6
+choose a,b,c,d,e st. the distribution is correct
+
+recall by definition we have:
+[x1,x2,x3] = [1 0 0] [N1]
+             [1 1 0] [N2]
+             [1 1 1] [N3]
+
+we found the covariance of X, COV(X) is:
+[1 1 1]
+[1 2 2]
+[1 2 3]
+we find this by doing AA^T where A is the matrix we multiplied [N1,N2,N3] by to get X
+
+now find covariance matrix of X' = [x1',x2',x3']   (using the definition above of X')
+[1   c            a      ]
+[c   c^2+d^2+e^2  ac+bd  ]
+[a   ac+bd        a^2+b^2]
+
+now equate the covariance matrices:
+c = a = 1
+c^2+d^2+e^2 = ac+bd = 2
+a^2+b^2 = 3
+
+thus 1+d^2+e^2 = 1+bd = 2
+and 1+b^2 = 3 thus b = √n
+thus 1+d^2+e^2 = 1+d√2 = 2
+thus d = 1/√2
+thus 1+1/2+e^2 = 2
+thus e = 1/√2
+thus in summary: a=c=1,d=e=1/√2,b=√2
+
+x1' = N4
+x2' = N4+N5/√2+N6/√2
+x3' = N4+N5√2
+
+notice x2' = (x1'+x4')/2 + N6/√2
+so the distribution is the mean of the end points plus normal error N6/√2
+

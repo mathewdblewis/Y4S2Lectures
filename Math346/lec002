@@ -39,6 +39,17 @@ K0 is the thermal conductivity constant (measures the ability of material to con
 stick that in for ø and get this:
 c(x)p(x)∂u/∂t(x,t) = K0*∂^2ø/∂x^2(x,t)+Q(x,t)
 
+from here we get:
+∂u/∂t = k(x) ∂^2u/∂x^2 + Qhat(x,t)
+where k(x) = K0/[c(x)p(x)], Qhat(x,t) = Q(x,t)/[c(x)p(x)]
+
+notice ∂u/∂t = k(x) ∂^2u/∂x^2 + Qhat(x,t)
+is a dynamical system
+
+notice this is a dynamical system on twice differentiable functions
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 Wed  8 Jan 2020 09:31:35 PST
-Math 477 Lec02
+Math477 lec02
 
 recall the pdf of standard normal is fN(x) = 1/√(2π) e^(-x^2/2)
 he talks about the change of variables needed to get distribution N(µ,ø^2)

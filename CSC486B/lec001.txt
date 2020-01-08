@@ -1,5 +1,5 @@
 Tue  7 Jan 2020 12:23:29 PST
-CSC 482B Lecture 1
+CSC482B Lec01
 
 email:     kyi@uvic.ca
 website:   vision.uvic.ca/people/kmyi

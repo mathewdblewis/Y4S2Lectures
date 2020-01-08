@@ -1,5 +1,5 @@
 Mon  6 Jan 2020 10:01:04 PST
-Math 436 manifolds, lecture 1
+Math436 lec01
 
 calculus in R^n:
 

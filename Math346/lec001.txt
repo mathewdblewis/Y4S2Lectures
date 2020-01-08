@@ -1,5 +1,5 @@
 Tue  7 Jan 2020 08:27:59 PST
-Math 346 Lecture 1
+Math346 Lec01
 
 midterm in Feb and March
 homework: 20%

@@ -1,5 +1,5 @@
 Tue  7 Jan 2020 10:27:25 PST
-Math 493 Lecture 1
+Math493 Lec01
 
 4 assignments (2 weeks per) 10% each
 final exam: 30%

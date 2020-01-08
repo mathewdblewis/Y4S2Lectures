@@ -1,5 +1,5 @@
 Mon  6 Jan 2020 11:25:07 PST
-CSC 421 Lecture 1
+CSC421 Lec01
 
 admin:
 40%:  4 assignments, 10% each

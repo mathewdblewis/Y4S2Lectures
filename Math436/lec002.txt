@@ -1,0 +1,95 @@
+Thu  9 Jan 2020 09:44:34 PST
+Math436 lec002
+
+
+thm: consider f:U->R^j and g:U->R^l
+both are C^k functions, that is, k-fold continuously differentiable
+then we define f (+) g: u->R^j*R^l, by p maps to (f(p),g(p))
+moreover, D(f(+)g)(p) = (Dfp,Dgp)
+
+
+consider the map taking A to A^2 where A is a matrix
+we can think of this as a composition of these two functions:
+A -> (A,A),  (A,B) -> AB
+notice the second function is bilinear
+
+by chain rule we have that the derivative of the original function is HA+AH
+that is, the derivative of A^2 in the direction H
+
+
+example: consider GLn
+consider the function i that takes A to A inverse
+we know i(A)*A -> I
+thus M(i(A),A) = I
+consider this map: A -> (A',A) -> A'*A = I     (using ' for inverse)
+the first map is i(+)I and the second is the multiplication map
+differentiate this equation: i(A)*A = I
+right side goes to 0, left side we get:
+Di_A(H) + A'H = 0
+thus Di_A(H) = -A'HA'
+
+
+NOTE: you need to learn how to do this
+
+
+
+
+
+NOTE: he says you can use newtons method to solve matrix equation such as A^4+3A^2+2A+I = 0
+
+
+
+
+
+
+
+
+
+implicit function theorem:
+consider f:U->R^n with U≤R^m open
+say f is C^k
+if Dfp is an onto function then
+there is a function g:U->R^(m-n)
+st. f(+)g:U->R^n*R^(m-n) is a C^k diffeomorphism between U and (f(+)g)(U')
+for some U'≤U open with p in U'
+
+
+def: A C^k diffeomorphism is a injective and surjective C^k function
+whose inverse is also C^k
+
+
+def: A subset M≤R^n is a C^k manifold of dimension m iff:
+foral points p in M TE. diffeomorph ø:U->V, U≤R^n open, V≤R^n open
+p in U, ø(M intersect U) = (R^m*{0}^(m-n)} intersect V
+
+NOTE: whenever we talk about something being diffeomorphic
+we mean to be C^k diffeomorphic
+
+
+
+examples of manifolds: the empty set is an m-manifold foral m
+an open subset of R^n is an n-manifold
+the graph of a smooth function is a manifold
+
+def: given C^k function f:U->R^n, U open, a regular value of f is a point
+q in R^n st. if f(p)=q, then Dfp is onto
+
+prop: points not in the image of f are regular
+
+prop: if q is a regular value, then f^(-1)(q) is a C^k manifold of dimension m-n
+this follows from the implicit function theorem
+
+
+sards theorem: if f:U->R^m, U≤R^n is open and f is C^∞
+then the regular values of f are dense subsets of R^m
+
+
+def: if M is a manifold and p in M, TpM = {g'(0): g:(a,b)->M, g is C^k}
+st. a<0<b and g(0) = p
+TmP is called the tangent space
+
+prop: if f:U->R^n and q in R^n is regular, then for p in f^-1(q)
+Tp(f^(-1)(q)) = ker(Dfp)
+
+
+proof: next time

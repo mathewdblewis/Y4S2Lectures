@@ -1,0 +1,7 @@
+Thu  9 Jan 2020 13:00:36 PST
+CSC421 lec002
+
+read chp1,2
+
+https://github.com/aimacode/aima-python
+

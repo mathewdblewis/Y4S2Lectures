@@ -1,0 +1,15 @@
+Fri 10 Jan 2020 12:53:57 PST
+CSC486B lec003
+
+he talks about L1 distance as is used to compute distance between images
+
+k-nearest neighbour:
+take the k nearest points, then do majority vote
+
+
+
+break data into 3 parts: training, validation, test
+use validation to tune hyper parameters
+
+this is called K-NN (K-nearest neighbours)
+

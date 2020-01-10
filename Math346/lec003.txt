@@ -1,0 +1,74 @@
+Fri 10 Jan 2020 08:50:26 PST
+Math346 lec003
+
+Missed first bit of the lecture
+from Brandons notes:
+def: insolated boundary conditions (BC's):
+U(0,t) = Ul(t) and U(L,t) = Ur(t)
+perfectly insolated: Ul(t)=Ur(t)=0 foral t
+aka no flux BC's (boundary conditions), aka neumann BC's
+
+
+newtons law of cooling:
+warm rod in contant at x=0 wiht moving cool air
+heat heaves the rod, heating the air
+and carrying away the heat (convection)
+air is warmer near the rod
+at x=0 we have
+k0(0)∂u/∂x(0,t) = -H(u(0,t)-ul(t))
+
+called mixed or robin BC   (boundary conditions)
+eg: c1(t)u(0,t) + c2(t)∂u/∂x(0,t) = ul(t)
+c2 = 0    (prescribed)
+c1 = 0    (insulated)
+same for x=L
+
+remark: heat flow changes at a rate proportional to the temperature difference between the rod
+and the air
+
+
+summary: we can mix on left and right at x=0 and x=L between thse conditions
+eg: Ut = Uxx + e^(-x^2)
+U(x,0) = 1/(x^2+1)
+∂U/∂x(0,t) = 0
+U(L,t) = sin(t)
+
+
+periodic boundary conditions:
+eg: ∂u/∂x(0,t) = ∂u/∂x(L,t)
+
+equilibrium temperature distribution:
+consider ut = k*uxx where k>0 is constant
+
+foral ICs, we should have lim t->∞ u(x,t) existing foral x
+he is not claiming or proving this, he is saying this is intuitive
+given our understanding of physics
+
+the limit "should be", independent of time
+
+
+eg: u(0,t) = T1, u(L,t) = T2, T1,T2 in R
+general solution of kuxx = 0 is u(x) = c1x+c2,  2 unknowns
+u(0,t) = T1 implies u(0) = c2 = T1
+u(L,t) = T2 implies u(L) = c1L+c2 = T2
+thus c1 = (T2-T1)/L
+
+
+NOTE: we need two conditions (two perscriptions) because it is second order in space
+say we had 5th order in space, we need then 5 boundary space conditions
+
+NOTE: similarly, the number of time derivatives tells you the number of ICs we need in time
+for example, we might have the initial state of the system and its initial time derivative
+
+eg: ux(0,t) = 0 and ux(L,t) = 0
+recall the general solution is u(x) = c1x+c2
+notice both conditions say c1=0
+so we don't know the value of c2
+however we now know that u(x) = c2
+so we don't have a particular solution
+
+he claims the stable solution in this case is a constant function
+with value equal to the integral of the initial condition over the entire domain
+(this is rather obvious intuitively, but he doesn't prove this)
+
+

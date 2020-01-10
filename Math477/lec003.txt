@@ -1,0 +1,64 @@
+Fri 10 Jan 2020 09:31:01 PST
+Math477 lec003
+
+Def: log-normal RVs,  LN(µ,ø^2)
+y~LN(µ,ø^2) if y=e^x where x~N(µ,ø^2)
+
+NOTE: quas thinks it should be called exp-normal
+
+lets find mean:
+E(Y) = E(e^X) = ∫e^x*fx(x)dx over (-∞,∞)
+where fx(x) is the pdf of the normal RV
+the only thing you need to do is complete the square in the exponent
+this is tedious, the result is e^(µ+ø^2/2)
+so if X~N(µ,ø^2) then this is the mean of Y=e^X
+
+now to find variance:
+say Y~LN(µ,ø^2), then Y=e^X where X~N(µ,ø^2)
+VAR(Y) = E(Y^2)-E(Y)^2 = E(e^(2X))-e^(2µ+ø^2)
+notice 2X~(2µ,4ø^2) thus e^(2X) ~ LN(2µ,4ø^2)
+thus E(e^(2X)) = e^(2µ+2ø^2)
+thus VAR(Y) = e^(2µ+2ø^2) - e^(2µ+ø^2) = e^(2µ+ø^2)[e^(ø^2)-1]
+
+summary:
+let Y~LN(µ,ø^2) then EXP(Y) = e^(µ+ø^2/2), VAR(Y) = e^(2µ+2ø^2) - e^(2µ+ø^2)
+
+
+
+
+
+Central Limit Theorem (CLT):
+if you add up independent RVs of "comprable size"
+the sum is aproximiately normal with mean ∑means and variance ∑variances
+
+notice as a corroloary, if we multiply independent RVs
+we get something aproximately LN
+
+this is a good way to model share prices for example
+
+
+Formal version of CLT
+let (Xn)_(1 to ∞) be a sequence of IID RVs with finite variance
+let E(Xi) = µ, VAR(Xi) = ø^2
+then ∑(Xi-nµ)/(ø√n) converges in distribution to N(0,1)
+
+in the rough version we have ∑Xi converges in dist to N(∑µi,∑øi^2)
+
+
+chapter 3: brownian motion
+
+what is a random variable?
+think of it as a program that returns a real number
+each time you run it you get different numbers
+this gives a distribution
+instead the function could return a list of reals
+this would be a family of random variables
+
+brownian motion:
+BM(a,µ,ø^2) is a family of random variables (Xt)_(t≥0) st:
+(1)  X0 = a
+(2)  X_(t+s)-X(t) is independent of Xu foral u in [0,t]
+(3)  X(t+s)-X(t) ~ N(µs,sø^2)
+
+in words, disjoint incriments are independent normals
+

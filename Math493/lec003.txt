@@ -1,0 +1,84 @@
+Fri 10 Jan 2020 10:27:08 PST
+Math493 lec003
+
+examples:
+let L = {+,-,*,0,1,<}
+here are some L-formulas: x+y=x*y, x*(-y)<0, foral x, TE y, (x<y)
+notice this may or may not be true
+
+def: a variable symbol appearing under the scope of a quantifier is called bound
+a variable symbol that isn't bound is free
+
+we will assume all varaibles are bound or free, not both
+we won't quantify variables twice
+
+
+
+notation: if ø is an L-formula, we write ø(x1,x2...xn)
+to denote that x1...xn are free variables in ø
+
+
+def: let L be a language, M an L-structure
+ø(x) an L-formula, a in M
+we define M |= ø(a)
+this is pronouced in four ways:
+"M models ø(a)", "ø(a) is true in M", "M satisfies ø(a)", "M beleives ø(a)"
+recursively using the definition of formulas
+if ø(x) is "t1(x) = t2(x)" then M |= ø(a) iff t1^m(a) = t2^m(a)
+if ø(x) is R(t1(x),...tn(x)) then M |= ø(a) iff (t1^m(a),...tn^m(a)) in R^m
+if ø(x) is c(x) V d(x) then M |= ø(a) iff M |= c(x) or M |= d(a)
+similarly for "&" and "not"
+
+if ø(x) is "FA y, g(x,y)"
+then M |= ø(a) iff FA b in M, M |= g(a,b)
+if ø(x) is "TE y, g(x,y)"
+M |= ø(a) iff TE some b in M st. M |= g(a,b)
+
+example: let L = Lgrp
+Here is an Lgrp formula: ø(x,y) = "xy=yx"
+if M=(Z,+,-,0)
+M |= ø(2,4)
+if M=(D3,*,`,e)
+then M !|= ø(r,j)
+
+
+If G is any group and a in G
+G |= "FA x ø"(a) iff a in Z(G)
+
+now consider this statement:
+G |= "FA x FA y (xy=yx)" iff G abelian
+
+
+def: an L-sentence is an L-formula without free variables
+an L-theory is a set of L-sentences
+given an L-structure M, the complete L-theory of M is denoted Th(M)
+this is Th(M) = {ø| ø is an L-sentence and M |= ø}
+
+notice foral M, "FA x, (x=x)" is in Th(M)
+
+
+
+def: let M and N be L-structures
+we say they are elementarily equivalent iff they have the same complete theory
+that is, Th(M) = Th(N)
+put differently, M and N satisfy the same sentences
+in this case we write M==N
+
+note: M==N iff foral L-sentences ø, M|=ø iff N|=ø
+
+
+theorem: if M≈N then M==N
+where ≈ denotes isomorphic
+
+NOTE: the converse is usually false
+
+we try to learn about M by studying the class of structures
+elementarily equivalent to M
+
+
+fact (to do on assignment)
+if M is finite (the underlying set is finite)
+then being elementarily equivalent does imply isomorphic
+
+however if M is infinite, then there are alway structures M and N with M==N yet M!≈N
+

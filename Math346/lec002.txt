@@ -49,37 +49,9 @@ is a dynamical system
 notice this is a dynamical system on twice differentiable functions
 
 
-
-
-
 boundary conditions:
 3 different kinds:
 perscribed temperature: u(0,t) = ul(t), u(l,t) = ur(t)
 ur and ul are left and right boundary conditions
 they are functions of time only
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

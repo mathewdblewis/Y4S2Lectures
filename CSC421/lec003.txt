@@ -1,0 +1,15 @@
+Mon 13 Jan 2020 12:56:18 PST
+CSC421 lec003
+
+types of queues: lifo (aka stack), fifo (aka queue), priority (priority queue)
+
+
+we need a data structure to store data on where we have been as we do
+breadth first search or depth first search
+
+admissable heuristic:  underestimates the true cost of an aproach
+
+
+f(n) = g(n) + h(n)
+f is priority queue cost, g is path cost, h is heuristic cost
+

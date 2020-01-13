@@ -1,0 +1,80 @@
+Mon 13 Jan 2020 11:27:26 PST
+Math377 lec004
+
+finishing off brownian model
+
+g(s,t) = kt^3, t≤(s/k)^(1/3) and s otherwise
+where s is half the volume
+
+f(s) is the probability distribution for the volume s
+this is what we mean by f is a prob dist:   P(a<s<b) = ∫f(s)ds over [a,b]
+
+ø(t) is the fraction crystalized
+
+ø(t) = ∫g(s,t)f(s)ds over [0,∞)
+
+we plug in the definition of g and get this:
+ø(t) = ∫sf(s) over [0,kt^3] + kt^3∫f(s)ds over [kt^3,∞)
+
+now we need f(s)
+we can find it emperically (looking at crystals)
+or we can use a model
+
+emperically we have:
+f(s) = bs^d*e^(-ds^2)    (what is d?)
+
+conditions:
+∫f(s)ds over [1,∞) = 1      (because it is a pdf)
+∫sf(s)ds over [1,∞) = 1     (because as time goes to ∞, we crystalize everything)
+(to see this, consider the value for ø(t) at t=∞)
+recall f(s) is the amount that the space is crystalized
+we have 3 parameters: b,k,d
+so we have at this point 1 degree of freedom
+
+
+numerically plotting ø(t) subject to constraints gives the three parameters
+how do we eliminate 1 degree of freedom?
+we tune it so that it fits the observed value
+
+lets now find f(s) using a model
+we will aproximate the volume of a cell with the volume of the largest sphere inscribed in it
+
+
+
+assume poisson distribution of nuclei
+pick a nucleus
+let X denote distance to its nearest neighbour
+P(x<X) = (1-4πx^3/(3V))^(N-1)
+prob(X≤x) = 1-(1-4πx^3/(3V))^(N-1)
+
+let S be a volume of the largest sphere in the cell
+then S = 4/3π(X/2)^3
+
+prob(S≤s) = prob(4/3π(X/2)^3≤s)
+= P(X≤(6s/π)^(1/3))
+= 1-e^(-4πl/3*(6s/π))
+= 1-e^(-8ls)
+
+he uses this to find a PDF for the distribution
+f(s) = 8le^(-8ls)
+
+he puts this f(s) into the formula for ø (this is done in the homework)
+
+the answer we get is ø(t) = 1/(8l)[1-e^(-8lkt^3)]
+
+this is the same as the classical model
+we have been unable so far to derive the emperical model
+
+
+
+
+
+he claims modeling well the shape of the crystals is an open problem
+
+
+
+he then talks about dimensional analysis
+he does the example where he derives the fact that doubling the speed of a ball thrown upwards
+will quadruple its max height
+
+

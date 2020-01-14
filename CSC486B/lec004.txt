@@ -1,0 +1,57 @@
+Tue 14 Jan 2020 12:37:37 PST
+CSC486B lec004
+
+he recaps k-means
+
+decision trees and random forests:
+
+office hours: 3-6 thursdays
+
+
+decision tree:
+split the data with a grid aligned seperator
+pick the "best" as the one that minimized miss classification error
+then do a line in the other direction, and repeat
+
+
+
+
+
+another metric is to use gini impurity
+def: randomly label an element
+randomly label according to distribution
+how often is this right?
+
+I_G(p) = ... 1-∑pi^2
+
+
+
+example: 27 dogs and 23 cats:
+1-.54^2 + .46^2 = .4968       (.54 = 27/(27+23))
+this gives us gini impurity for each node
+
+another way is to use entropy:
+H(t) = -∑p_(j,t)ln(p_(j,t))
+
+
+although greedy algorithms at each moment pick the best decision
+it may not pick the best decision overall
+
+bagging:
+to avoid this problem we make multiple trees and look at the result of each
+we call the collection of trees a forest
+
+we make the trees with boostrapping
+randomly draw datasets with replacements from the original training data
+draw as many as the original data size
+
+
+random forest:
+randomly choose dimensions, split randomly, repeat
+
+each partition within the random tree decides what that region is label
+given a data point, look at all trees and see which region it goes into
+this is how we label a datapoint
+
+
+

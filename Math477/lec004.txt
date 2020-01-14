@@ -1,0 +1,47 @@
+Tue 14 Jan 2020 09:19:47 PST
+Math477 lec004
+
+BM axioms:
+(1)  X(t+s) - X(t) independent of Xu for u≤t
+(2)  X(t+s) - X(t) ~ N(µs,sø^2)
+(3)  X(0) = a
+(4)  almost everwhere, the map t goes to Xt is continuous
+
+we won't worry about axiom 4
+
+
+
+say X0 = a, then Xs ~ N(a+µs,sø^2)
+also Xs = Xs-Xt + Xt
+Xs-Xt ~ N(µ(s-t),ø^2(s-t)) and Xt ~ N(a+µt,ø^2t)
+thus the sum, Xs is N(a+µs,sø^2)
+this works by independence
+so we found Xs by two different means, and got the same thing, which is good
+
+
+
+inclass problem:
+find COV(X5-X3,X4-X1)
+= COV(X5-X4+X4-X3,X4-X3+X3-X1)
+= COV(D54+D43,D43+D31)
+= COV(D43,D43) = VAR(X4-X3) = VAR N(µs,ø^2s) = VAR N(0,1) = 1
+
+
+NOTE: with prob 1, BM is not differentiable anywhere
+
+
+interesting fact: in the 1800s mathemeticians thought all continuous functions
+were differentiable everwhere except a few places
+
+
+recall f'(x) = lim h->0 [f(x+h)-f(x)]/h
+[x(t+h)-x(t)]/h ~ N(µh,ø^2h)/h ~ N(µ,ø^2/h)
+notice lim h->0 of this doesn't exist because ø^2/h tends to ∞ in this case
+
+
+
+standard brownian motion:  no drift, starts at 0, has variance 1
+
+say we want yt ~ BM(a,µ,ø^2) from xt ~ BM(0,0,1)
+yt = a+µt+ø*xt
+

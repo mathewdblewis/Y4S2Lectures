@@ -1,0 +1,101 @@
+Tue 14 Jan 2020 10:31:07 PST
+Math493 lec004
+
+our goal: prove M~N implies M==N
+lemma: suppose j:M->N is an isomorphism
+t(x1...xm) is a term and a1...am in M
+we will prove j(t^M(a1...am)) = t^N(j(a1),j(a2)...j(am))
+
+proof via induction on the complexity of t
+if t is a constant symbol c, then j(t^N(a1..am)) = j(c^N) = C^N = t^N(j(a1)...j(am))
+the second to last equality holds by the definition of isomorphism
+
+if t is the variable symbol xi
+then j(t^m(a1...am)) = j(ai) = t^N(j(a1),...j(am))
+suppose t is f(t1(x1...xm),...tn(x1...xm)) for some n-ary function symbol f
+and terms t1...tn
+j(t^M(a1...am)) = j(f^M(t1^M(a1...am),...tn^M(a1...am)))
+= f^N(j(t1^M(a1...am)),...j(tn^M(a1...am)))                 (by the definition of isomorphism)
+= f^N(t1^N(j(a1),...j(am))...tn^N(j(a1),...j(am)))          (by induction)
+= t^n(j(a1),...j(an))
+
+so in conclusion, j(t^N(a)) = t^M(j(a))
+
+
+theorem: suppose j:M->N is an isomorphism, and ø(x) is a formula, and a is a tuple from M
+then M |= ø(a) iff N |= ø(j(a))
+
+
+proof: induction on complexity of ø
+if ø(x) is t1(x) = t2(x) then M |= ø(a) iff t1^M(a) = t2^M(a)     (by def of |= )
+t1^M(a) = t2^M(a) is true iff j(t1^M(a)) = j(t2^M(a))             (because j injective)
+now use the lemma:
+j(t1^M(a)) = t1^N(j(a)) and j(t2^M(a)) = t2^N(j(a)) thus we have:
+N |= ø(a) iff t1^N(j(a)) = t2^N(j(a))
+thus M |= ø(a) iff t1^N(j(a)) = t2^N(j(a))
+or equivalently, M |= ø(a) iff N |= ø(j(a))
+
+by def:   M |= ø(a)    iff    (t1^M(a),...tn^M(a)) in R^M    (recall R is a relation)
+then by def of isomorphism we have:
+... iff (j(t1^M(a)),...j(tn^M(a))) in R^N
+then by the lemma:
+(t1^N(j(a)),...tn^N(j(a))) in R^n
+then N |= ø(j(a))
+thus M |= ø(a) iff N |= ø(j(a))
+
+we have just addressed equality and relations, we will now address conjunction
+let ø(x) be c(x) ^ d(x)
+M |= ø(a) iff M |= c(x) and M |= d(x)
+which is true iff N |= c(j(x)) and N |= d(j(x))
+which is true iff N |= ø(j(x))
+
+disjunction is similar so we will ignore it, now a proof for the "not" case:   (` for not)
+
+if ø(x) is `c(x)
+M |= ø(a) iff M |!= c(a)
+iff N |!= c(j(a))         (induction)
+iff N |= ø(j(a))
+
+
+
+now the foral quantifier:
+if ø(x) is foral y, ø(x,y), then M |= ø(a) iff foral b in M, M |= ø(a,b)
+iff foral b in M, N |= ø(j(a),j(b))     (induction)
+iff foral b' in N, N |= ø(j(a),b')      (surjectivity of j)
+iff N |= ø(j(a))
+
+the TE quantifier is a similar proof so we will ignore this
+
+
+cor: If M~N then M==N
+proof: let ø be a sentence, ø has no free variable
+the theorem tells us M |= ø iff N |= ø
+notice we don't have j(a) anymore because there are no free variables in this case
+(ø is a sentence)
+
+
+def: suppose M is an L-structure and X≤M^n and suppose A≤M
+we say X is A-definable iff TE formula ø(x1...xn,y1...ym) 
+and a1...am in A st. X = {(b1...bn) in M^n| M|=ø(b1...bn,a1...am)}
+
+if X is A-definable for some A, X is called definable
+if X is empty set definable we call it 0 definable
+
+
+example: let G be a group as an L_grp structure
+let ø(x,y) be "xy=yx"
+let c(x) be "FA y, ø(x,y)"
+then G |= c(a) iff foral b in G, "ab=ba" iff a in Z(G)    (Z denotes the centre)
+so Z(G) is zero definable because it uses no elements of G to define
+
+notice the centralizer Cg(G) (all things that commute with g)
+is {g}-definable
+
+
+example: let ø be TE x, TE y, y^2=v & x^3+1=v in the ring C(X)
+(ring of algebraic functions)  this defines C
+
+that is, C = {a in C(X)| C(X) |= ø}
+this uses arithetic on eliptic curves
+
+

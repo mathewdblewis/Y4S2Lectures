@@ -1,0 +1,70 @@
+Tue 14 Jan 2020 08:35:38 PST
+Math346 lec004
+
+
+say 0 = kuxx and at x=0,L we have ux = 0
+(ux = 0 means there is no change in heat at the boundary)
+(thus there is no heat flux at the end points)
+(thus total heat is preserved)
+(this is call neuman)
+
+Study ∫u(x,t)dx ovr x in [0,L] where u is a solution of ut = kuxx
+∂/∂t ∫u(x,t)dx = ∫ut(x,t)dx = k∫uxx(x,t)dx = k(ux(L,t)-ux(0,t))
+from the boundary conditions, we then know that ux(L,t) = ux(0,t) = 0
+thus ∂/∂t ∫u(x,t)dx = 0 thus no heat is gained or lost
+
+∂/∂t ∫u(x,t)dx = 0 thus ∂/∂t ∫u(x,t)dx doesn't change in time
+thus ∂/∂t ∫u(x,t)dx = ∂/∂t ∫f(x)dx
+where u(x,0) = f(x) from the ICs
+
+moreover:
+if u*(x) (the end stable solution) = C
+then CL = ∫f(x)dx over [0,L]
+
+
+he does a demo of the heat spreading out
+notice that when you have fixed end points (fixed in heat)
+you have an exponential rate of convergence
+notice that when you have no heat flux at the boundaries (neuman)
+the rate of convergence is slow (algebraic not exponential)
+
+
+
+
+
+higher dimensional heat equation:
+let R≤R^n be a region
+rate of change of heat energy = heat flowing across the boundary per unit time
++ heat energy generated inside per unit time
+
+heat energy in R = ∫∫∫cpu*dv over R
+heat flux is now a vector, denoted ø(x,y)
+|ø| is thus amount of heat flux per time per volume
+
+if we demand that ø is parallel to the boundary of R
+then no heat energy crosses it
+
+if we do have heat flow, we can take the component of ø that leaves R
+we do this by doting with the normal vector n
+
+øn<0 is inward flow and øn>0 is outward
+
+
+heat energy flowing out of R is ∫∫ø*n*ds
+where ds is the differential along the surface are of R
+NOTE: he puts a circle overlaping the double integrals
+this is just a notation
+
+
+
+heat equation: d/dt ∫∫∫cpu*dV = -∫∫øn*ds + ∫∫∫QdV over R
+where Q is the source
+
+note: divergence theorem is the higher dim analog of FTC
+we use this to continue
+
+div theorem:  ∫∫F*n*ds = ∫∫∫grad F dV over R
+where grad = (∂/∂x,∂/∂y)
+
+thus we can replace ∫∫ø*n*dv with ∫∫∫grad ø*dv
+

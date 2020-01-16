@@ -1,0 +1,32 @@
+Thu 16 Jan 2020 12:58:33 PST
+CSC421 lec004
+
+we view everything as agents in an environment
+
+he talks about using breadth first search and depth first search
+
+
+
+def: a search algorithm is complete iff:
+if there is a solution, it will be found eventually
+
+def: a search algorithm is optimal iff:
+if there are multiple solution it will find the one with lowest cost
+
+def: time complexity and space complexity
+(done in the obvious way)
+
+
+
+
+formulate as search problem: you just tell us the following info:
+what is intitial state
+what is successor function (takes state and action to state)
+what is goal state
+
+
+
+
+hill climbing:
+a heuristic search for optimization problem
+

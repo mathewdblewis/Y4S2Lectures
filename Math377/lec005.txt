@@ -1,0 +1,102 @@
+Thu 16 Jan 2020 11:19:57 PST
+Math377 lec005
+
+
+hint for problem 1:
+find E(t), the expected number of waves crossing point p at time t
+think about ∆E, that is, number of waves coming from a ring around the point p
+
+office hours after 145 today
+
+fundamental units in physics:
+name:                           dimension symbol        SI units
+1: mass                         M                       kg
+2: length                       L                       m
+3: time                         T                       s
+4: temperature                  ø                       k
+5: current                      I                       A
+6: amount                       N                       mol
+7: luminosity intensity         J                       cd
+
+
+we will study a system with variables W1,W2...Wn
+and a value we are interested in u
+so we have: {u,W1,...Wn}
+
+
+
+Notice force is not a fundamental unit in this system
+we can express it in terms of the other units
+
+assume all of the parameters can be written as products of powers of the fundamental units
+(he doesn't justifty this)
+
+
+how to do dimensional analysis:
+1: write down each paramter in terms of fundamental units
+2: decide how many fundamental units used
+3: goal: write u as a function of the w's, that is: u = f(w1,w2...wn)
+4: u = f(p1...pm,s1...s(n-m))
+
+we divide the parameters into primary and secondary parameters
+
+
+example: P1=force, P2=time,P3=L
+notice M = [P1*P3^2/P2], so we can get mass
+
+
+he explains how to express the dimension as a vector (just log it)
+
+
+
+the primaries must be linearly independent
+
+plan: write u (or s1,...s(n-m)) in terms of P1,...Pm
+u = f(p1,...pm,D1π1...D(n-m)π(n-m))
+let D be the units of u
+then we have:
+u/D = 1/D f(p1,...pm,D1π1...D(n-m)π(n-m))
+
+big idea: a dimensionless equation can't depend on the choice of scaling the units
+as a consequence, u/D depends only on f(D1π1,...D(n-m)π(n-m))
+
+
+
+
+
+example: trinity bomb:
+r = f(t,E,p0,P0)   (t time, E energy, p0 air density, P0 pressure, r radius)
+[r] = L, [t] = T, [E] = ML^2/T^2
+
+choose these as primaries: t,E,p0
+pick this order for dimension: t,L,M   (mass length time)
+[r] = t^a*E^b*p0^c
+this gives this matrix problem:
+[0;1;0] = [0  1  1] [a]
+          [0  2 -3] [b]
+          [1 -2  0] [c]
+
+so we solve this for [a,b,c] and then were good
+solving this gives [a,b,c] = [2/5,1/5,-1/5]
+
+this gives:
+[r] = [t^2E/p0]^(1/5) = D
+
+we do the same with pressure P0:
+[1 -1 -2] = [0  1  1] [a]
+            [0  2 -3] [b]
+            [1 -2  0] [c]
+
+he gets: [P0] = (E^2p0^3/t^6)^(1/5)
+
+so we have:
+r = [t^2E/p0]^(1/5) * f(P0*(E^2p0^3/t^6)^(-1/5))
+
+
+he reasons P0*(E^2p0^3/t^6)^(-1/5) is close to 0
+because E is big and time is small
+
+he therefor simplifies f(...) as a constant f(0)
+
+he found that f(0) = 1 experimentally
+

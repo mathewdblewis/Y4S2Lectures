@@ -1,0 +1,52 @@
+Fri 17 Jan 2020 08:35:20 PST
+Math346 lec006
+
+
+LIBRARY LOUNGE AT 1pm
+
+
+
+heat equation: cp ∂u/∂t = -grad ø + Q
+
+fouriers law: heat flux ø = K0*grad U
+so we have: cp ∂u/∂t = grad(K0*grad U) + Q
+
+if K0 constant, then ut = k∆u + Q
+where k = k0/(cp)
+
+initial conditions:  u(x,0) = f(x) for x in R^n
+boundary conditions: u(x,t) = g(x,t) foral x in ∂R   (where ∂R denotes boundary of region R)
+no flux condition:   n*ø = 0 where n is the normal vector
+no flux stated differently: n * grad u = 0
+newtons law of cooling:     -k0*grad v * n = H(u-u0)
+
+
+deriving polar laplacian:
+x,y = rcosø,rsinø
+u(x,y,t) = u(rcosø,rsinø,t)
+xr = cosø, yr = sinø
+xø = -rsinø, uø = rcosø
+
+ur = ux xr + uy yr = ux cosø + uy sinø
+urr = uxr cosø + uyr sinø
+= (uxx*xr + uxy*yr) cosø + (uyx cosø + uyy sinø) sinø
+= (uxx*cosø + uxy*sinø) cosø + (uyx cosø + uyy sinø) sinø
+= uxx cos^2ø + uxy*2sinøcosø + uyy*sin^2ø
+
+uø = ux xø + uy yø = -rsinø*ux + rcosø*uy
+uøø = ∂/∂ø [-rsinø*ux + rcosø*uy]
+= (-rcos ux) - rsinø(-rsinø uxx + rcosø uxy) + (-rsinø uy) + rcosø(-rsinø-uxy+rcosø*uyy)
+
+uøø = -r(cosø ux + sinø uy) + r^2(sin^2ø uxx - sin(2ø)uxy + cos^2ø uyy)
+urr + uøø/r^2 = uxx+uyy - (ux cosø + uy sinø)/r = uxx+uyy-ur/r
+thus we have:  ∆u = uxx+uyy = urr + uøø/r^2 + ur/r
+
+another form: urr+ur/r = ∂/∂r (r*∂u/∂r)/r
+
+
+spherical coordinates:
+x = rsinøcosa, y = rsinøsina, z = cosø, r≥0, a in [0,2π), ø in [0,π)
+
+∆u = ∂/∂r(r^2∂u/∂r) + 1/(r^2sinø)∂/∂ø(sinø∂u/∂ø) + 1/(r^2sin^2ø) ∂^2u/∂ø^2
+
+

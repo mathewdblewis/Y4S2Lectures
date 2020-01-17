@@ -1,0 +1,91 @@
+Fri 17 Jan 2020 10:33:55 PST
+Math493 lec006
+
+recall X≤M^n is definable if there is a formula ø(x,y) and a b in M st. X = {X in M| M|=ø(a,b)}
+
+thm: suppose that X≤M^n and X is A-dfbl, then foral automorphisms ø of M st.
+ø(a)=a foral a in A, ø(X)=X
+
+proof: suppose ø(x,y), a in A are st X = {b in M^n| M|=ø(b,a)}
+suppose ø is an automorphism of M fixing A pointwise
+
+suppose ø is an automorphism of M fixing A pointwise foral b in M^n
+b in X iff M|=ø(b,a) iff M|=ø(ø(b),ø(a)) iff ø(b) in X
+
+note: the converse of this theorem is false
+let M be the real ordered field
+fact: M has only one automorphism
+thus all subsets of R are automorphism invariant
+thus if the converse were true, then all subsets of R would be definable
+however there are 2^R subsets of R, yet only |R| of them are definable
+he doesn't prove there are only |R| of them because this is a question for the grad students
+
+
+
+
+example: R is not definable in C = (C,+,-,*,0,1)
+suppose R was definable, then R is definable over a finite set A≤C
+fact: if x,y in C are algebraically independent over A
+then TE. sigma in Aut(C) st. ø(x) = y
+algebraically independent means there isn't a 2-variate polynomial that takes (x,y) to 0
+in particular, we can choose x in R and y not in R and find such an automorphism
+then by our theorem R is not A-definable
+
+
+def: recall a theory is a set of sentences
+if T is a theory and ø a sentence we write T |= ø if:
+M |= T implies M |= ø
+
+example: in Lgrp, let Tgrp be the axioms for group
+Tgrp |= ø where ø is:
+foral z, (foral x, xz=x implies z=1)
+
+hwoever Tgrp |!= foral x (xx=1)
+this is because there are groups where x^2=1 isn't true
+also Tgrp |!= not (foral x (xx=1))
+this is because there are such group
+
+
+def: a theory T is complete if foral sentences ø, either T |= ø or T|= not ø
+
+
+NOTE: T is complete iff foral M,N |= T implies M==N
+that is, if M and N are models for T, then they are equivalent
+
+example: foral M, Th(M) = {ø| M|=ø} is complete
+
+example: let L=ø, let T∞ be the theory
+T∞ = {"TE x1, TE x2, x1≠x2", "TE x1, TE x2, TE x3, x1≠x2 ^ x1≠x3", ... }
+T∞ is complete
+
+
+example: in Lrng let ACFp be the theory of algebriacally closed fields of characteristic p
+eg: "FA a,b,c, (a≠b implies TE x, ax^2+bx+c=0) in ACFp"
+it expresses that all quadratics have roots
+so we include a statement for each degree
+
+note: turns out that T∞ and ACFp being complete are proven in much the same way
+
+
+
+eg: L = {<}, DLO (dense linear orderings without endpoints)
+note: DLO has only finitely many axioms
+so it effectly only has one axioms (just "and" them all together)
+
+
+
+main goals: given T, how can we build interesting models
+If T is complete, how can we tell models of T apart
+
+
+first question: given T, does T have any models?
+
+Theorem: (compactness theorem)
+let T be a theory, then T has a model iff foral finite subset T0≤T, T0 has a model
+
+NOTE: if M |= T then M |= T0 foral subsets T0≤T
+(so we have one direction done)
+
+converse: for each finite T0≤T we have a model M_T0 |= T0
+we need to assemble these models into a model of T
+

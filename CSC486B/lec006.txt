@@ -1,26 +1,7 @@
 Fri 17 Jan 2020 12:35:03 PST
 CSC486B lec006
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+parameteric approach to linear classifiers:
+we have a function f(x,W) = Wx
+where x is a vector and W a matrix of weights
 

@@ -1,0 +1,33 @@
+Fri 17 Jan 2020 09:23:36 PST
+Math477 lec006
+
+X(t+s) = Xt + µs + ø√sN
+this is distribution of X(t+s) given Xt
+when you don't know anything else
+
+
+brownian motion is the limit of a random walk
+consider RW with time step ∆, move up or down by ±ø√∆
+
+
+he claims that Xt = Z1+...Z(t/∆) is like a brownian motion for small ∆
+this is obvious, he "proves" this, its slightly handwavy
+
+
+
+
+Theorem: consider a random walk Xn with n in [1,...N]
+conditioned on XN = k, all paths are equally likely
+where prob of going up is p
+he proves this
+
+
+
+
+
+corollary:
+let ø^2 be fixed, let xt~BM(0,µ,ø^2)
+the conditional distribution of Xs
+given that Xt=x doesn't depend on µ
+
+

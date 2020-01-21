@@ -1,0 +1,87 @@
+Tue 21 Jan 2020 09:31:56 PST
+Math477 lec007
+
+recall the axioms of BM:
+(1)   x0 = a
+(2)   x(t+s) - x(t) ind x(u) for u<t
+(3)   x(t+s) - x(t) ~ N(µs,ø^2t)
+
+
+in this course we will use geometric BM (GBM(c,µ,ø^2)):
+(1)   Yn = c
+(2)   y(t+s)/yt ind yu for u≤t
+(3)   y(t+s)/yt ~ lN(µs,ø^2s)
+
+where lN is the log normal random variable
+
+fact: GBM(c,µ,ø^2) = exp(BM(lnc,µ,ø^2)) = ce^(Xt) where Xt ~ BM(0,µ,ø^2)
+he proves this fact
+
+
+he notes that we can aproximate a GBM by multiplying by a factor e^(±ø√∆)
+
+he calls this process a multiplicative random walk (MRW)
+
+we will study the maximum variable of BM:
+M(t) := max Xs over s in [0,t]
+
+we will study the distribution of M(t)
+Xt ~ BM(0,µ,ø^2)
+find P(M(t)>y)
+strategy: condition of Xt
+
+use this to compute P(M(t)>y) = ∫P(M(t)>y|Xt=x)f_xt(x)dx over (-∞,∞)
+
+we now compute P(M(t)>y|Xt=x):
+lemma: suppose Xt ~ BM(0,µ,ø^2), y≥0
+Then P(M(t)≥y|Xt=x) = e^(-2y(y-x)/(tø^2)) for y>x and 1 otherwise
+
+easy cases: y=0 (this is true trivially)
+another easy case:
+if y≤x then again we get 1, this is because we assume we reach a height of x eventually
+thus M(t) must get bigger than y
+
+
+now we will show this case:
+P(M(t)≥y|xt=x) = e^(-2y(y-x)/(tø^2))
+simplication: set µ=0
+we can do this because BM(0,µ,ø^2) conditioned on Xt=x
+has the same dist as BM(0,0,ø^2) conditioned on Xt=x
+(we proved this last time)
+
+we define conditional probability so that this holds:
+P(M(t)≥y|Xt=x) = lim h->0 P(M(t)≥y|xt in [x,x+h])
+
+notice M(t)≥y iff Ty≤t
+where Ty = inf{t≥0: Xt=y}
+
+
+P(Ty≤t| Xt in [x,x+h]) = P(xt in [x,x+h] and Ty≤t) / P(xt in [x,x+h])
+= P(Xt in [x,x+h] | Ty≤t) * P(Ty≤t) / P(xt in [x,x+h])
+
+we now want to find P(Xt in [x,x+h] | Ty≤t)
+when we are at the time t = Ty, we know there is a 1/2 chance of going up or down
+this is call reflection principle
+so we get this:
+P(Xt in [x,x+h] | Ty≤t) * P(Ty≤t) / P(xt in [x,x+h])
+= P(Xt in [2y-x-h,2y-x] | Ty≤t) * P(Ty≤t) / P(xt in [x,x+h])
+
+the interval [2y-x-h,2y-x] is the reflection of the interval [x,x+h] about the 
+horizontal line y
+
+P(Xt in [2y-x-h,2y-x] | Ty≤t) * P(Ty≤t) / P(xt in [x,x+h])
+= P(Xt in [2y-x-h,2y-x] & Ty≤t) / P(xt in [x,x+h])
+notice we don't need the Ty≤t because if Xt in [2y-x-h,2y-x] then Ty≤t
+thus we have:
+= P(Xt in [2y-x-h,2y-x]) / P(xt in [x,x+h])
+we can get both of these by integrating normal distributions
+recall we only want this in the limit as h goes to 0
+so we get fx(2y-x)/fx(x)
+where fx is the pdf of the random variable
+
+notice Xt ~ N(0,ø^2t)
+thus fx(z) ~ 1/√(2πtø^2) exp(-z^2/(2ø^2t))
+
+he then finishes up this proof
+
+

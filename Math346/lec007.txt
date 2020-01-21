@@ -1,0 +1,89 @@
+Tue 21 Jan 2020 08:34:41 PST
+Math346 lec007
+
+separation of variables:
+def: a linear operator L(u) satisfies L(c1u1+c2u2) = c1L(u1) = c2L(u2)
+EX: matrices, derivatives etc
+
+
+properties:
+(1)  L(0) = 0
+(2)  if L(u) = f and up solves this then so does up+un for any uh satisfying L(uh)
+     up = particular solution
+     uh = homogeneous solution
+     L(u) = f is homogeneous if f=0
+     if f ≠ 0 this is inhomogeneous
+
+principle of super position (PSP):
+if u1 and u2 are solutions, that is, L(u1)=L(u2)=0 for some linear L, then L(c1u1+c2u2) = 0
+
+
+thm: the kernel of the 1D laplacian is the affine functions
+notice x^2-y^2 is in the kernel of the 2D laplacian
+so it gets more complicated in higher dimensions
+also in different geometries it also gets harder
+
+
+example:
+ux+u = 0, ∆u = 0, uxxyy-uxyz+ux = 0, a(x)uxx+b(x,y)uyy-u+g(y)uy = 0, ut = grad(K0(x)grad(u))
+
+and the heat operator: ut - grad(K0(x)grad(U)) = 0
+
+not linear: u^2 = 0, ut-uxx+a(x)u*ux = 0
+notice the last is equation is non linear because u*ux is quadratic
+
+linearity also applies to boundary conditions
+1:  ∂u(0,t)/∂x = 0   (insolated/neuman boundary)
+2:  u(0,t) = 0       (pinned)
+3:  a1u(0,t)+a2 ux(0,t) = 0
+
+non linear boundary conditions, eg:  u(0,t)ux(0,t) = 0
+
+consider this PDE:
+1:   ut = kuxx
+2:   u(0,t) = 0 = u(L,t)
+it is linear
+
+consider this PDE:
+1:   ut = kuxx
+2:   u^2(0,t) - ux^2(0,t) = 0
+it is non linear
+
+
+
+separation of variables:
+
+consider this equation: ut=kuxx, u(0,t) = 0 = u(L,t)
+say u = A(x)B(t)
+ut = ABt and uxx = Axx B
+so we have 0 = A Bt - k Axx B
+now divide by kAB
+0 = Bt/(kB) - kAxx/A  thus  (Bt/(kB))(t) = k(Axx/A)(x)
+notice the right side is a function of x and the left a function of t
+thus both sides must be a constant -l   (lambda, a eigenvalue)
+it will have a coresponding eigenfunction
+
+so we get these equation:
+Axx/A = -l      =>   Axx+lA = 0
+Bt/(kB) = -l    =>   Bt+klB = 0
+
+options for l: positive, negative, 0, purely complex
+(we rule out the complex case without justification)
+
+recall the boundary conditions: u(0,t) = 0 = u(L,t)
+thus A(0)B(t) = 0 = A(L)B(t)
+thus A(0) = 0 = A(L)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

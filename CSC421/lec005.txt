@@ -1,0 +1,39 @@
+Mon 20 Jan 2020 12:58:05 PST
+CSC421 lec005
+
+wumpus world:
+grid of squares
+there are pits and a wumpus
+if you touch the wumpus or the pits you die
+if you are adjacent (not diagonal) to a pit, you feel breeze
+you don't know where the pit is though, just that you are near one
+if you are neighbouring the wumpus you smell its stench
+you can shoot an arrow in the direction you are facing
+you start in the start square and must return to it to end the game
+each use of an arrow costs 10 points, each action costs 1 point
+falling in a pit or being eaten by a wumpus costs 1000 points
+climbing out with goal awards 1000 points
+wumpus location and gold locations are uniform random
+the start spot is always sqaure [1,1]
+each square has a pit with prob 0.2
+you can only shoot once
+grabbing gold is an action
+climbing is an action
+
+at each step sense these attributes:
+stench, breeze, glitter, bump, scream
+there is a scream in all squares if the wumpus dies
+each of these are true or false
+for example, if your near 3 pits you feel only 1 breeze not 3
+you only see glitter when your on the square with the gold
+
+actuators: forward, turn L, turn R, grab, shoot, climb
+bumb is when you hit a wall, on the next round you feel a bump
+
+
+
+
+we will use logic to develop the AI:
+we have props (propositions), P, Q etc and True and False
+
+

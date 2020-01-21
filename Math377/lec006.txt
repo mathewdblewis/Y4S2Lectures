@@ -1,0 +1,51 @@
+Mon 20 Jan 2020 11:35:15 PST
+Math377 lec006
+
+example: cooking a turkey:
+t = f(l,p,k,T)
+l = diameter
+p = density
+k = termal conductivity
+T = energy density (sort of like temperature, energy per volume)
+
+
+[t] = s, [l] = m. [p] = kgm^-3, [k] = m^2/s, [T] = kgm^2/s^2/m^3 = kg/[ms^2]
+
+he does dimensional analysis on this
+
+
+
+
+
+dominoes fall at a speed, there are these parameters:
+g (accelleration)
+d (distance between dominoes)
+h (height of dominoes)
+w (width of dominoes)
+
+v (velocity) = f(d,w,h,g)
+
+[v] = m/s, [d] = m, [w] = m, [h] = m, [g] = m/s^2
+
+v = k * d^a * w^b * h^(1/2-a-b) * g^(1/2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

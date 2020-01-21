@@ -1,0 +1,21 @@
+Tue 21 Jan 2020 12:34:43 PST
+CSC486B lec007
+
+logicistic regression:
+
+ø(t) = e^t/(1+e^t) = 1/(1+e^(-t))
+L = -∑ln(ø(yi*Wxi))     over all i
+
+
+
+one against all:
+make a classifier for each type of point
+each will tell you if the point is of that type or if it is not
+
+this leads to the data imbalance problem
+eg: if you have 10 times more of data type A than data type B
+it will just say everything is of type A even though it doesn't learn anything
+
+
+to avoid this, we do classification A vs B for all pairs of classes A and B
+

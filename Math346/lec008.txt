@@ -1,0 +1,13 @@
+Wed 22 Jan 2020 08:39:40 PST
+Math346 lec008
+
+he finishes the problem from last time
+once you seperate variables its just standard stuff from ODEs
+
+if u(x,0) = f(x) is nice enough, you can write it as a fourier series f(x) = ∑cn*sin(nπx/2)
+
+
+
+thm:
+∫sin(nπx/L)sin(mπx/L)dx over [0,L] = L/2 for n=m and 0 o.w.
+we use this to project a function f onto the basis

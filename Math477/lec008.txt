@@ -1,0 +1,69 @@
+Wed 22 Jan 2020 09:31:30 PST
+Math477 lec008
+
+last time:
+P(M(t)≥y: Xt=x) = e^(-2y(y-x)/(tø^2)) for y≥x and 1 otherwise
+
+today:
+thm: P(M(t)≥y) = e^(2yµ/ø^2) Ø((µt+y)/(ø√t)) + Ø((y-µt)/(ø√t))
+where Ø(x) = P(N>x)
+
+proof: P(M(t)≥y) = ∫P(M(t)≥y: Xt=x)fx(x)dx
+...
+this is tedious calculus
+
+
+
+
+
+cameron-martin theorem:
+let w be a RV whose value is determined by Xu where Xu ~ BM(0,µ,ø^2)
+E_u(w) = exp(-µ^2t/(2ø^2))E0(w*exp(µXt/ø^2))
+where E_u denotes E for BM(0,µ,ø^2) and E0 denotes E for BM(0,0,ø^2)
+
+interpretation: BM(0,0,ø^2) and BM(0,µ,ø^2) see same paths with different probabilities
+
+
+
+
+
+
+
+principal goal of the course: to price options
+first model the price of the option by a GBM
+we aproximate GBM with multiplicative random walks
+we use risk neutral measure (RNM)
+
+price = expectation of payout
+
+we take the RNM for random walks and use it to get a RNM for GBM
+
+
+sections of the course:
+(1) probability and GBM
+(2) money
+(3) arbitrage (leads to RNM for random walks)
+(4) GBMs and black scholes
+
+
+
+chapter 4: interest rates
+often discus contracts involving money at different times
+eg: buy shares now and sell in 6 months
+assume interest rate is fixed and known (bonds)
+
+bonds: you pay money now and get a fixed amount of money at a specific date in the future
+
+continuous time: future payout is P*exp(rt)
+t is time period (always in years)
+present value PV is (future)e^(-rt)
+
+we won't distinguish between 100 dollars now and 100exp(rt) dollars in t years
+
+
+discrete time:
+future payout: P(1+R)^n
+n = number of time steps
+R = interest / step
+PV = future payout, (1+R)^(-n)
+

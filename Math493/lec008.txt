@@ -1,0 +1,61 @@
+Wed 22 Jan 2020 10:14:15 PST
+Math493 lec008
+
+
+Recall ø≠xi sets, I ≠ ø, U an ultrafilter on I
+(xi)_(i in I) ~ (yi)_(i in I) iff {i in I: xi=yi} in U
+∏_(xi)/U = {equivalence classes of ~}
+
+we will use single letters to denote elements of ∏Xi
+then if a in ∏Xi write a(i) for the ith element of the tuple a
+
+(I will let K = ∏Xi/U)
+Recall: if R is a binary relation symbol, we define ([a]_U,[b]_u) in R^K
+as {i in I: (a(i),b(i)) in R^Mi} which is an element of U
+NOTE: we are only looking at binary relations
+we would do this for other relations but the proof is the same, just messier
+he proves this is well defined, this is clear if you think about it
+
+
+
+lemma: suppose t(x1...xn) is an L-term and [a1],...[an],[b] in ∏Mi/U     (recall K = ∏Mi/U)
+then t^K([a1]...[an]) = [b] iff {i in I: t^Mi(a1(i)...an(i))} ≤ U
+
+proof by induction on complexity of terms:
+If t(x1...xn) = xk then
+t^K([a1]...[an]) = [b] iff [ak] = [b] iff {i in I: ak(i)=b(i)} in U
+iff {i in I: t^Mi(a1(i),...an(i))} = b(i)} in U
+
+if t(x1...xn) in c (a constant) then t^K([a1]...[an]) = [b]
+iff c^K = [b] iff [(c^Mi)_{i in I}] = [b] iff {i in I: c^Mi = b(i)} in U
+
+
+
+inductive step:
+suppose t(x1...xn) is f(t1(x1...xn),...tr(x1...xn))
+then t^K([a1]...[an]) = [b] 
+iff f^K(t1^K([a1],...[an])...tr^K([a1],...[an])) = [b]
+
+
+the proof is long and messy
+I have stopped at this point
+
+
+
+theorem: (tos's theorem, pronouced "wash")
+suppose ø(x1...xn) is an L-formula and [a1]...[an] in K then
+K |= ø([a1]...[an])
+iff {i in I: Mi |= ø(a1(i)...an(i))} in U
+
+
+he does a proof sketch, I won't write this down
+
+
+
+we use the fact that U is an ultrafilter when we do negation
+if ø is not a
+iff N |= ø iff N !|= a iff {i in I: Mi|=ø} not in U
+iff I-{i in I: Mi|=a} in U     (using ultra)
+iff {i in I: Mi |= a} in U
+iff {i in I: Mi |= ø} in U
+

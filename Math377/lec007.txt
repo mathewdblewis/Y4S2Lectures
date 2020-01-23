@@ -65,6 +65,7 @@ now set tcv0/xc = 1
 this gets us:
 
 X" = -1/(Xv0^2/(gR)+1)
+so the important constant is v0^2/(gR)
 
 
 
@@ -72,22 +73,17 @@ X" = -1/(Xv0^2/(gR)+1)
 
 
 
+chapter 5 of the book (loosely): preditor prey models
+N(t) = # prey, P(t) = # predators
+dN/dt = aN(t) - bN(t)P(t)
+where a is the birthrate and b is the eating rating
+dP/dt = -cP(t)+dN(t)P(t)
+where c is death rate and d is birth rate due to eating prey
+so we get the Lotka-Voltera model
+N' = N(a-bP)
+P' = P(aN-c)
 
+notice they have no explicit time dependence (autonomous)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+he explains how to visualize an ODE in R^n
 

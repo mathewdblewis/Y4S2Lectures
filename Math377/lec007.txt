@@ -1,0 +1,93 @@
+Thu 23 Jan 2020 11:30:18 PST
+Math377 lec007
+
+today: non dimensionalization
+
+example: mass on a spring:
+mx" + cx' + kx = 0
+m is the force, c is the damping and k is hooks law
+
+recall there is a notion of period in a spring phenomenon
+we want to recover this
+
+our goal: express in non-dimensional terms
+let x = x_c*X         where x_c is the characteristic and X is dimensionless
+similarly t=t_c*T     where t_c is the characteristic and T is dimensionless
+
+eg: if period of 5 seconds set t_c=5s
+then 10 seconds = t_c*T   where T = 2 is dimensionless
+
+
+recall the equation: mx"+cx'+kx = 0
+dx/dt = dx/dX dX/dT dT/dt = x_c dX/dT /t_c = x_c/t_c * dX/dT
+similarly d^2x/dt^2 = d/dt [x_c/t_c * dX/dT] = ... xc/tc^2 d^2X/dT^2
+thus we have: mxc/tc^2 d^2X/dT^2 + cxc/tc dX/dT + kxcX = 0
+equivalently: d^2X/dT^2 + (c/m)tc dX/dT + k/m tc^2 X = 0
+
+goal: normalize coefficients to be 1:
+we get to pick tc and xc
+
+let assume we are in the case where c=0
+then normalization implies tc = √(m/k)
+this is the value of tc what we should pick so that the last coefficient is 1
+
+normalizing the other way we get:
+d^2X/dT^2 + (c/m)√(m/k) dX/dT + X = 0
+
+(c/m)√(m/k) is called the damping ratio
+
+so we should classify springs upto damping ratio, not mass and damping constants etc
+this is the only parameter that matters
+
+
+example: throw a ball up
+simple model:      x" = -g, x(0) = 0, x'(0) = v0
+newtonian model:   Fg = GMm/(x+R)^2 where R is earth radius and x is distance above the earth
+M is eath mass and m is mass of object and g is constant
+
+mx" = GMm/R^2 at x=0
+call g = GM/R^2
+so we get this mode:
+x" = -gR^2/(x+R)^2, x(0) = 0, x'(0) = v0
+
+for x<<1 the models collapse (become the same), but what is "small"?
+we want to answer this question in terms of v0
+because its the only thing we have that we can modify
+
+
+non-dimensionalize: x = xc*X, t=tc*T
+the condition x(0) = 0 becomes X(0)=0
+ dX/dT = tc*v0/xc so we have X'(0) = tc*v0/xc
+also we have: d^2X/dT^2 = -gR^2/(xcX+R)^2 * tc^2/xc^2
+thus we have X" = -g/(xcX/R+1)^2 * tc^2/xc^2
+
+now set tcv0/xc = 1
+this gets us:
+
+X" = -1/(Xv0^2/(gR)+1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

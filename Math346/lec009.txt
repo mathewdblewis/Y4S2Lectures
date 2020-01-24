@@ -1,0 +1,68 @@
+Fri 24 Jan 2020 08:40:00 PST
+Math346 lec009
+
+heat equation with other boundary conditions
+(1):  Newmann BC
+heat pde: ut=kuxx for 0<x<L, t>0
+Newmann BC, ux(0,t) = ux(L,t) = 0
+IC: U(x,0) = f(x), x in [0,L]
+solve IVP via seperation of variables
+u(x,t) = G(t)ø(x)
+thus G'(t) = lkG(t) and ø"(x) = -lø(x) and ø'(0) = ø'(L) = 0
+
+notice ø"(x) = -lø(x) and ø'(0) = ø'(L) = 0
+is an eigen value problem
+
+
+solving the eigenvalue problem is broken into cases:
+say l>0, then ø(x) = Acos(x√l) + Bsin(x√l)
+now ø'(x) = -A√l sin(x√l) + B√l cos(x√l)
+thus 0 = ø'(0) = B√l thus B=0
+thus 0 = ø'(L) = -A√l sin(x√l) + B√l cos(x√l) = -A√l sin(x√l)
+notice A≠0 otherwise ø(x)=0, thus sin(x√l) = 0, thus x√l = nπ for some integer n≠0
+thus l = (nπ/L)^2 and ø(x) = cos(nπx/L)   (A might as well be 1)
+
+say l=0, then ø"(x) = 0, thus ø(x) = Ax+B
+ø'(0) = ø'(L) = 0 thus A = 0, thus ø(x) = 1 (B might as well be 1)
+
+say l<0, then ø(x) = sinh(x√l)+Bcosh(x√l)
+ø'(x) = A√(-l)cosh(√(-l)x) + B√(-l)sin(√(-l)x)
+ø'(0) = 0 thus A=0
+thus B√(-l)sinh(√(-l)L) = 0
+thus B = 0
+thus no solutions
+
+in summary: l = ln = (nπ/L)^2 and ø = øn(x) = cos(nπx/L)
+then G'(t) = lkG(t) = -k(nπ/L)^2G(t)
+G = Gn(t) = An e^(-k(nπ/L)^2t)
+u(x,t) = An e^(-k(nπ/L)^2t) cos(nπx/L)
+
+u(x,t) = ∑An*cos(nπx/L)e^(-k(nπ/L)^2t) is a solution to ut=uxx with ux(0,t)=ux(L,t)=0
+
+this assumes that when t=0 we have f(x) = ∑Ancos(nπx/L)
+we then do this: An = 2/π ∫f(x)cos(nπx/L)dx over [0,L]
+
+
+periodic boundary conditions
+ut=kuxx, x in [-L,L], t>0, u(-L,t) = u(L,t), ux(-L,t)=ux(L,t), u(x,0)=f(x)
+we get:
+G'(t) = -lkG(t)
+ø"(x) = -lø(x),ø(0) = ø(L),ø'(0) = ø'(L)
+
+case l>0: l = (nπ/L)^2 for n in Z+
+ø(x) = Acos(nπx/L)+Bsin(nπx/L)
+
+case l=0: l=0, ø(x) = 1
+case l<0 or complex, no solutions
+
+u(x,t) = A0 + ∑(An*cos(nπx/L)+Bn*sin(nπx/L))exp(-k(nπ/L)^2t)
+with Z0 = 1/(2L) ∫f(x)dx over [-L,L]
+An = 1/L ∫f(x)cos(nπx/L)dx over [-L,L]
+Bn = 1/L ∫f(x)sin(nπx/L)dx over [-L,L]
+
+
+
+recall types of BCs:
+dirichlet (fixed temperature)
+neumann   (fixed flux)
+

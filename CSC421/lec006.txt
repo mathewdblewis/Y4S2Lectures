@@ -1,0 +1,58 @@
+Thu 23 Jan 2020 13:05:39 PST
+CSC421 lec006
+
+a formal system is a rigourous framework for proving statements
+(look into this)
+
+he brings this up in the context of differentiating between B |= b and a => b
+
+inference by enumeration:
+depth first enumeration of all models is sound and complete
+O(2^N) for N symbols
+straightforward to understand and code
+works fine for small finite domains
+
+sound: its correct
+complete: it always gives and answer
+
+
+two sentences are logically equivalent iff true in same models
+
+
+
+a sentence is:
+valid if true in all models
+satisfiable if true in some model
+unsatisfiable if true in no models
+
+
+
+horn clauses:
+conjunction of a collection of variables implies another variable
+
+if our knownledge base can be written in terms of horn clauses
+we can use forward and backward chaining to solve problems
+
+backward chaining:
+given a query q, first look and see if q is in the knowledge base
+(if it is your done)
+if not, look for something that implies q
+then for each of the things needed to imply q, try looking these up, etc
+put goals in a goal stack only if they aren't in the stack already
+(so we don't prove things twice)
+
+
+
+forward chaining: extrapolate everything you could know
+from what you currently know, this is not efficient
+
+
+programming using logic statements (prolog)
+
+
+
+conjunctive normal form
+
+resolution:
+(A or B) & not A implies B
+

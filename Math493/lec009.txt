@@ -1,0 +1,108 @@
+Fri 24 Jan 2020 10:19:23 PST
+Math493 lec009
+
+last time: tos theorem:
+K = ∏Mi/U, K |= ø([a1],...[an]) iff {i in I| Mi |= ø(a1(i),...an(i))}
+
+today: (1) the "exists" step of the proof of tos
+       (2) compactness
+
+
+
+ø(x1...xn) is TE y g(x1...xn,y)
+K |= ø([a1]...[an]) implies there is [b] in K st. K |= g([a1],...[an],[b])
+implies {i in I: Mi |= g(a1(i)...an(i),b(i))} in U
+implies {i in I: Mi |= TE y, g(a1(i),...an(i),y)} in U
+
+
+now the reverse direction
+suppose A = {i in I: Mi |= TE y, g(a1(i)...an(i),y)} in U
+Given i in I, i in A, we can find bi in Mi st. Mi |= g(a1(i)...an(i),bi)
+if i not in A, pick any bi in Mi
+let b = (bi)_{i in I}
+then {i in I: Mi |= g(a1(i)...an(i),b(i)} = A in U
+thus by induction hypothesis, K |= g([a1]...[an],[b])
+
+
+
+def: let M be an L-structure, U an ultrafilter, the ultraproduct ∏Mi/U
+with each Mi=M is the ultrapower of M by U, we denote this by M^U
+
+cor: M == M^U foral ultrafilter U   (elementarily equivalent)
+
+facts about ultrapowers:
+if U is a principle ultrafilter M and M^U are isomorphic
+if M is finite, M and M^U are isomorphic
+(this follows from the cor and the result in the assignment)
+if M is countable and U a non principle ultrafilter on the naturals then |M^U|=|R|
+
+
+
+
+theorem: compactness
+let T an L-theory, then T has a model iff all finite subsets of T have a model
+
+the forward direction is trivial, lets prove the reverse
+
+let I = {∆≤T: ∆ is finite}
+foral ∆ in I, let M_∆ be a model of ∆
+for each ø in T, let Aø = {∆ in I: M∆ |= ø}
+note ø in ∆ implies ∆ in Aø but Aø may have others
+
+claim: {Aø| ø in T} has fip
+proof: consider Aø1...Aøn
+let ∆ = {ø1...øn}
+then M∆ |= øi foral i thus ∆ in Aø1 intersect ... Aøn ≠ 0
+
+let U be an ultrafilter on I, st Aø in U foral ø
+let M = ∏M∆/U, pick ø in T, {∆ in I: M∆ |= ø} = Aø in U
+thus by tos theorem, the ultraproduct M|=ø
+
+
+
+
+
+
+examples of using compactness
+there is no theory in the language of groups T st. M|=T iff M is a cyclic group
+proof: say there is such a T bwoc
+let L be the language of group theory along with an uncountable set of constants I
+and the ca are new constants in L = Lgrp U {ca | a in I}
+
+let T* = T U {ca≠cb|a≠b in I}
+(we add to the theory T the statement that all constants are different)
+
+claim: T* is consistent
+by compactness it sufficies to show this for each finite subset thus consider ∆≤T* finite
+lets satisfy all of T and finitely many of the constants
+
+suppose a1...an in I are the finitely many constants mentioned in ∆
+consider the group Z(n+1) and let M∆ be that group with ca1^M∆ = 1 ... can^M∆ = n
+and foral other a in I, ca^M∆ = 0
+so this group M∆ is a model of ∆
+by compactness there is a M* that models T*
+thus M* is an uncountable cyclic group which is impossible
+
+
+
+
+
+
+
+
+
+theorem: suppose G = (V,E) is a planar graph, then G can be 4-coloured
+proof: this is true for V finite
+let L = {E,C1,C2,C3,C4}
+E is binary relation (edges) and C1...C4 are unary relations (they tell you the colour)
+let L_G = L U {Cv| v in V} where cv are constant symbols
+T = {foral x, c1(x) or c2(x) ... c4(x), foral x,y E(x,y) implies, not(c1(x)&c1(Y)) ... }
+U {E(cv,cw)| v is adjacent to w in G}
+U {not E(cv,cw)| v not adjacent to w in G}
+
+claim: T is consistent
+proof: each finite subset of T asserts the existance of a 4-colouring of a finite subgraph of G
+by compactness we have a model M |= T
+then c1...c4 are a 4 colouring of M and the interpretations of the constants of M
+form a graph isomorphic to G
+

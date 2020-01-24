@@ -1,0 +1,84 @@
+Fri 24 Jan 2020 09:26:45 PST
+Math477 lec009
+
+chapter 5: arbitrage
+underlying the entire course, we have the idea that any finanacial product
+can be bought or sold in any quantity, even fractional quantities
+at the same price
+
+we can buy 1 share of MSFT at 166.16 for example
+and sell 3 MSFT for 3*166.16
+
+basically there are no transaction fees
+
+similarly the interest you get when lending
+is the same as when borrowing over a fixed period
+although this is not acurate for individual people
+this is relatively close to true for institutions such as banks
+thus everything can be converted to dollar value
+
+say you buy MSFT for 166 today and sell in 3 months for 174
+then the net change is 174e^(-r/4)-166
+r is known in advanced, it is the interest rate for a 3 month deposite
+
+
+you can short shares, that is, sell shares you don't own
+this is like owning a negative number of shares
+eg: short 5 MSFT shares today then settle in 3 months
+then net change is 5(166-174e^(-r/4))
+
+notice everything is measured in todays dollars
+
+
+
+arbitrage:
+a combination of purchases and sales (not nessisarily all today)
+which is garenteed to make a profit
+informally "free money"
+
+
+we will ensure prices are chosen so that no arbitrage happens
+
+
+call option: a contract giving the holder the right (not the obligation)
+to buy one (exactly one) share at a fixed cost K and fixed time T
+this is called a European call option
+with American options you can do so at any time upto and including T
+we will look at more exotic options later
+
+
+eg: MSFT, K = 170 (you have a right to buy it at the price 170)
+If S(1/4) = 174, use the option to buy the share, then sell the share emediately
+this earns you 4 dollars net
+the cashflow is 4e^(-r/4)-C where C is the cost of the option
+if S(1/4) = 168 then don't buy it
+buying is called exercising
+in this case the payout is 0 so the cashflow is 0-C
+
+notation: x^+  (I will write x`) denotes max(x,0)
+payout of a call is (S(t)-k)` in time t dollars
+
+
+
+
+example: (unrealistic)
+single time step (this means use discount factor 1/(1+R), that is, descritized time)
+say we have a share worth 100 after 1 time step it will be worth 50$ or 200$
+interest of period is R
+call option with strike price K = 150
+so at the end of the period we either get 50$ (if the stock becomes worth 200)
+or 0 (if its worth less)
+
+lets replicate the call using shares and bonds
+bonds means investing money in the bank with gareenteed interest rate r
+buy x shares and put y in the bank
+whats it worth if the stock price goes up?      200x+(1+R)y
+whats it worth if the stock price goes down?    50x+(1+R)y
+to replicate the option, equate these with 0 and 50 from before
+200x+(1+R)y = 50
+50x+(1+R)y = 0
+150x = 50, thus x=1/3, thus y = -50/(3(1+R))
+
+
+so we can replicate a call by buying 1/3 a share and borrowing 50/(3(1+R)) from the bank
+

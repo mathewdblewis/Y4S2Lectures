@@ -3,24 +3,10 @@ CSC486B lec009
 
 
 
+losses for machine learning: L(W) = 1/N ∑Li(f(xi,W),yi)+lR(W)
 
+L1 regularization: R(W) = ∑∑|Wkl|_1
+we are actually wanting to aproximate an L0 regularization
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+he explains gradient descent 
 

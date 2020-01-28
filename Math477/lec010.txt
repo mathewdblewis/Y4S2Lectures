@@ -1,0 +1,58 @@
+Tue 28 Jan 2020 09:18:21 PST
+Math477 lec010
+
+
+recall we buy 1/3 share and -50/(3(1+R)) in the bank
+
+
+the cost of the portfolio is 1/3*100-50/3*9/10 where R = 1/9
+this equals 18.33
+cost of the call must be the same to avoid arbitrage
+
+
+
+say you can buy a call for 20$, then you short a call and do the portfolio
+this gives an arbitrage
+
+say you can buy a call for 17, then buy the call and sell the portfolio
+
+
+
+
+the law of one price (loop)
+If two portfolios (pf1 and pf2) are such that for all possible outcomes
+the payout of pf1 is the same as the payout of pf2, then they cost the same
+if this were not true then we could do arbitrage
+
+
+
+put call parity formula:
+european put is the right to sell a share for the strike price (K) at time T (exercise time)
+payout of a put:
+sell share for K when true price is S
+payout: K-S when S<K otherwise 0 = (K-S)`
+
+facts:
+for c>0, (cx)` = cx`, x`+(-x)` = |x|, x`-(-x)` = x, (x+y)` ≤ x`+y`
+
+
+putcall parity formula is a relationship between cost of a call and
+a put on the same stock with same strike
+C-P = S-Ke^(-rt)
+where C is cost of call and P cost of put
+S is stock price now and K is strike price
+r is interest rate and t is exercise time
+
+to prove this, use the loop
+
+
+pf1: buy call sell put, cost is C-P    
+pf1 payout: (St-K)`-(K-S)`
+because (St-K)` is the payout of a call and the payout of a put is (K-S)`
+however you have a negative put, so the value is (St-K)`-(K-S)`
+notice (St-K)`-(K-S)` = St-K
+
+now find something worth St at time t (buy a share)
+now find something worth K at time t, (borrow Ke^(-rt))
+so pf2 should be buy a share and borrow ke^(-rt)
+

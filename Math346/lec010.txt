@@ -3,24 +3,36 @@ Math346 lec010
 
 
 
+the maximum principle:
+let U(x,t) be C^2 solution of:
+ut=kuxx, u(0,t) = a(t), u(L,t)=b(t), u(x,0) = f(x)
+
+let T>0 be fixed and define M = max f(x) over x in [0,L]
+A = max a(t) in [0,T], B = max b(t) in [0,T]
+then u(x,t)≤max(M,A,B) foral x,t
+
+
+say not bwoc, then TE (x0,t0) in (0,L)x(0,T] st. u(x0,t0) is a max of u and u a solution of the PDE
+thus ut(x0,t0) = 0
+thus kuxx(x0,t0) = ut(x0,t0) = 0
+foral e>0, defined ve(x,t) = u(x,t)+et
+ve_t = ut+e, ve_xx = uxx
+thus ve_t = kve_xx+e
+at (x0,t0) = ve_t(x0,t0) = e
+thus ve is decreasing at (x0,t0)
+thus for any e, we can find t1<t0 st. v(x0,t1)>v(x0,t0)
+
+u(x0,t0)+et1>u(x0,t0)+et0
+thus u(x0,t1)+e(t1-t0)>u(x0,t0)
+thus u(x0,t1)>u(x0,t0)
+
+f(x) satisfies uxx=0
 
 
 
+laplaces equation: (∆u=0)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+he splits it into 4 parts like in the book
+this is all the same as in the book, see the book for this
 
 

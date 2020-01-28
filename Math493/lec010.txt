@@ -1,0 +1,100 @@
+Tue 28 Jan 2020 10:30:27 PST
+Math493 lec010
+
+start time: 1035
+1042
+1046
+1048
+1049
+1059
+1109
+1110
+1111
+
+def: Let T be an L-theory, an axiomatization of T is an L-theory T' st. foral L-structures M
+M |= T iff M |= T'
+
+def: T is finitely axiomatizable if it has a finite axiomatization
+
+example: let L-Lrng and T be the theory of fields of characteristic 0
+eg: T = {axioms of fields} U {1+1≠0,1+1+1≠0...}
+then T is not finitely axiomatizable
+
+proof: say not bwoc, say M |= ø iff M |= T for some sentence ø and let T* = T U {not ø}
+notice T* has no models, thus if we prove it does have models this concludes the proof
+consider a finite subset of T*
+it can express at most the field axioms, not ø, and finitely many instances of 1+1...1≠0
+so if ∆≤T and P is a prime larger than the longest instance of 1+1...1≠0
+then Fp |= ∆
+thus every finite subset of the model has a model, thus T U (not ø) has a model
+however this is false, thus the statement holds
+
+
+fact about ultrapowers:
+say M and N are L-structures, and there is an ultrafilter U on some set st. M^U ≈ N^U
+then M == M^U == N^U == N
+recall M == M^U by toss and M^U == N^U because isomorphic (≈) implies elementary equivalent (==)
+
+the converse is true: (keisler-shelah)
+if M==N then there is an ultrafilter U st. M^U≈N^U
+
+we will not use this
+
+
+
+def: suppose M and N are L-structures
+an L-embedding f:M->N is an elementary embedding iff foral formula ø(x) and every tuple a in M
+M |= ø(a) iff N |= ø(f(a))
+
+recall a previous theorem: any isomorphism is an elementary embedding
+
+example: foral M, the map j:M->M^U, defined by j(a) = [(a,a,...a)]_U is an elementary embedding
+this follows from toss's theorem
+
+example: Let L = {≤}
+let M = ([0,1],≤)      (where [0,1] denotes the interval of reals from 0 to 1)
+let N = ([0,2],≤)
+let f:M->N be f(x)
+this is not an elementary embedding
+M|="forall x, x≤1" yet N doesn't believe "foral x, x≤f(1)"
+
+
+
+
+
+example: let M = ((0,1),≤) and N = ((0,2),≤)
+then the inclusion map is elementary (but we can't prove it yet)
+
+
+def: let M and N be L-strutures with M≤N
+M is a substructure of N (M≤N) iff the inclusion map is an embedding
+M is an elementary substructure of N, (he denotes this with a curly ≤, I will use ≤≤)
+if the inclusion is an elementary embedding
+
+NOTE: the inclusion map is the identity map
+
+
+
+
+theorem: (lowenheim-skolem)
+let M be an infinite L-structure, and k≥max{|L|,A0}   (A0 is aleph null)
+then if K≤|M| then M has an elementary substructure of size k
+if k≥|M| then M has an elementary extension of size k
+
+fact: (lindstroms theorem)
+If you have any reasonable notion of "logic" and your logic extends first order logic
+and has compactness and lowenheim-skolem, then this new logic is equivalent to first order logic
+
+
+def: let M be an L-structure
+we define LM = L U {Cm|m in M} where cm's are new constants
+if N is an L-structure and M≤N, we let N_M be the LM-structure obtained from N by setting cM^Nm=M
+
+
+def: a formula is automic if it is built using only base cases of the definition of formulas
+eg: equalities and relations
+the atomic diagram of M (diag(M)) is defined as
+diag(M) = {ø: ø is an LM sentence, ø is atomic or negation of atomic and MM|=ø}
+
+the elementary diagram of M is diag(M) = {ø| ø is an LM-sentence and MM |= ø}
+

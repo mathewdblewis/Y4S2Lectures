@@ -1,0 +1,16 @@
+Wed 29 Jan 2020 09:09:38 PST
+Math346 lec011
+
+he derives the polar heat equation
+
+u(r,ø) = A(ø)B(r) = a0 + ∑r^n[an cos(nø) + bn sin(nø)] over n in [1,∞)
+also u(q,ø) = f(ø) implies f(ø) = a0 + ∑q^n[an cos(nø) + bn sin(nø)]
+
+now integrate ø from -π to π
+notice the sin and cos parts integrate to 0 so we get:
+∫f(ø)dø = 2πa0 thus a0 = 1/(2π) ∫f(ø)dø over [-π,π]
+
+now to get the a's and b's, multiply by cos(mø) and integrate from -π to π
+∫f(ø)cosødø over [-π,π] = πq^m*am thus am = 1/(q^mπ) ∫f(ø)cos(ø)dø over [-π,π]
+similarly bm = 1/(q^mπ) ∫f(ø)sin(ø)dø over [-π,π]
+

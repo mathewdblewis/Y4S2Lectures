@@ -1,0 +1,81 @@
+Wed 29 Jan 2020 10:29:32 PST
+Math493 lec011
+
+
+new assignment on Friday or possibly Tuesday
+
+
+
+
+
+recall we are working on up and downward lowelheim skolem
+recall this is a just a generalization of the group theory example
+if you have structures of arbitrarily large size, you can do so to arbitrary cardinality
+
+M an L-structure: Lm = L U {cm| m in M}
+diag(M) = {ø: ø is an atomic or negated atomic Lm-sentence and Mm |= ø}
+diag_(el)(M) = {ø: ø is an L-sentence, Mm|=ø}
+(el stands for elementary)
+
+lemma: suppose N an Lm-structure
+if N models diag(M), then the function a:M->N defined by a(m) = cm^N
+is an embedding of M into N|L
+also if N|=diag(el)(M) then the map a:M->N defined above is an elementary embedding
+
+we won't prove the lemma, but its straightforward (look at assignment 1)
+
+
+thm: upward lowenheim skolem (version 1)
+suppose M an infinite L-structure and k≥max{|M|,|L|}
+then there is an L-structure N st. M<<N and |N|≥k      (recall << is elementary substructure)
+
+
+proof: let I be a set of size k, for each i in I, let di be a new constant symbol
+let T = diag_(el)(M) U {di ≠ dj| i≠j}
+if T is consistent, we can take N to be a model of T
+so we only need to look at finite subsets and show they are consistent
+
+any finite subset of T is satisfied in an expansion of Mm to include interpretations
+
+
+now the downward direction
+
+
+thm: (tarski vaught)
+suppose M and N are L-structures and M≤N, then M<<N
+foral formulas ø(v,w), and all a in M, if there is b in N st. N |= ø(b,a)
+then there is b' in M st. M |= ø(b',a)
+
+proof: the forward direction is true trivially
+backwards: do induction on formulas
+all cases of the induction work except existential quantification
+the last step is to use the hypothesis about existential quanification
+
+
+example: M = ([0,1],≤) and N = ([0,2],≤) and ø := "not (x≤y)"
+then N models TE x, ø(x,1) yet this is false in M
+
+
+def: let L a language, T an L-theory
+we say T has built in skolem functions if FA L-formulas ø(v,w1...wn)
+TE. n-ary function symbol f_ø in L st.
+T |= "FA w1...wn (TE v, ø(v,w1...wn) -> ø(fø(w1...wn),w1...wn))
+so f "picks" the witness for the existential
+if the quantification is not true, f can do whatever it likes
+
+
+lemma: let T an L-theory, there is language L*≥L and L*-theory T*≥T st.
+T* has built-in skolem functions and every model of T can be expanded into a
+model of T* by interpreting symbosl in L*-L
+we can make |L*| = max{|L|,|N|}
+T* is called a skolemization of T
+
+proof: let L0 = L and T0 = T
+we construct Li and Ti recursively
+L(i+1) = Li U {fø: ø is an Li formula}
+note: |L(i+1)| = max{|Li|,|N|}
+T(i+1) = Ti U {foral w(TE v ø(v,w) implies ø(fø(w),w)): ø is an Li-formula}
+let L* = U{Li} and T* = U{Ti}
+
+notice any L* formula is in some Li, so at stage (i+1) the skolem function is made for it
+

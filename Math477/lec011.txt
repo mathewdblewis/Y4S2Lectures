@@ -1,0 +1,73 @@
+Wed 29 Jan 2020 09:38:38 PST
+Math477 lec011
+
+call = buy, put = sell
+
+thm: its never advantagous to exercise a us call early
+proof: compare 2 strategies:
+suppose we're holding a us call(K,t)
+suppose time now is s
+suppose Ss>K (otherwise no point in exercising the option)
+strategy 1: exercise the call now
+strategy 2: sell 1 share and invest ke^(-r(t-s)) and wait until time t
+
+           payout   now                 time t
+strat1:             Ss-K                0
+strat2:             Ss-Ke^(-r(t-s))     -St+K + (St-K)`
+
+notice -St+K + (St-K)` = 0 when St>K and if St<k then get positive number
+so we get at least 0 in both cases
+
+
+so strat2 pays more now and at least as much as time t
+so we should never exercise early
+
+
+note: this is not the case with american puts
+he recommends looking into this
+there is an exercise boundary that when the price hits the exercise boundary
+it is good to exercise an american put
+
+
+generalized loop (gloop)
+given 2 portfolios pf1 and pf2, if payout(pf1) ≤ payout(pf2) in all situations
+then cost(pf1)≤cost(pf2), otherwise arbitrage
+
+
+
+forward contract:
+agreement made where you agree now to pay an amount F at time T
+and receive one stock at time t
+note: this is not the right to buy a stock, but rather the obligation to buy a stock
+no payment at t=0, money only changes hands at the moment of purchase
+
+what is the value of such a contract? use loop
+
+
+let pf1 be the forwards contract
+let pf2 be buying a stock and borrowing from the bank the same amount
+       0               t
+pf1:   0               St-F
+pf2:   S0-Fe^(-rt)     St-F
+
+so we should have S0-Fe^(-rt) = 0
+so F = S0e^(rt)
+
+
+
+Commodity futures
+1 eur today is worth 1.0603 USD
+forwards contract: 1 eur in 3 months worth 1.0628
+
+the difference is due to different interest rates in the us and europe
+
+use the loop to find the relationship
+find 2 ways to obtain 1 euro in 3 months
+pf1: buy 1 euro now
+pf2: buy 1 euro in 3 months
+
+he finds that 1.0628/1.0603 = exp((rus-reu)/4)
+
+
+he talks about convex functions
+

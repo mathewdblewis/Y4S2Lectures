@@ -1,26 +1,50 @@
 Thu 30 Jan 2020 12:55:24 PST
 CSC421 lec008
 
+these are the most important chapters
+chapter 3: search
+chapter 7: propositional logic
+
+you can use the digital book but only the pdf can be open during the exam
+
+
+there is a topic on adversarial search
+this sounds interesting, read the text on this
+
+
+we won't look at effective propositional model checking
+
+
+
+satisfiability:
+given a sentence, is the a set of variables which satisfies it?
+
+
+
+midterm problem:
+formulate sat as a search problem:
+we need an initial state, states, actions, goal, path cost, transition model
+initial state = no assignments to variables
+actions: assign a value to a variable
+state: a particular collection of assignments and lack of assignments
+goal: an assignment in which the statement is true
+this is called the partial state formulation
+
+another way to do this is to pick a random assignment of variables
+then move through the tree by changing the variables
+
+NOTE: we don't care about the path cost in this situation
 
 
 
 
+chapter 6: constraint satisfaction problems
+consistent: all variables are so that no constraint is not violated
+complete:   all variables are assigned
+solution:   consistent and complete
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+unary constraint:  just filter the domains
+binary constraint: add constraints
+also multi constraint
 

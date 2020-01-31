@@ -1,0 +1,60 @@
+Fri 31 Jan 2020 09:29:35 PST
+Math477 lec012
+
+recall how calls work:
+you can buy at time t at price K
+
+gloop: suppose 2 portfolios pf1 and pf2
+payout pf1 ≤ payout pf2 in all situations implies cos(pf1)≤cost(pf2)
+
+consider cost of a call on stock
+at exercise time t as a function of strike price k C(k)
+theorem: C(K) is convex
+
+pf1: buy call with strike price (1-l)k1+lk2
+pf2: buy (1-l) of call with strike price k1 and l of call with strike price k2
+payout of pf1: (s(t)-((1-l)k1+lk2))`
+payout of pf2: (1-l)(s(t)-k1)` + l(s(t)-k2)`
+
+to use gloop, we should how that the first payout is always less than the second
+recall (x+y)` ≤ x`+y` and (cx)`=cx` for c≥0, from this the result is clear
+
+thus pay(pf1)≤pay(pf2)
+
+we have now proved c(K) is convex (why is this?)
+
+also we have that C(∞) = 0, to see why, if the strike price is too high
+it will be very unlikely to happen, and thus has very low value
+also the function is decreasing
+also C(0) = the price of the stock
+
+
+to show this last equality holds use the loop:
+pf1: buy the security for price C(0)
+pf2: don't buy it, spend x dollars to buy 1 stock
+
+payout1: (S(t)-0)` = S(t)` = S(t)
+payout2: S(t)
+
+notice they have the same payout, so they must have the same cost
+so x equals C(0), thus we must spend C(0) to buy 1 stock, so C(0) = S0
+
+
+
+
+the time machine option (not real, he just invented this)
+pays s(1/4) at time 1/2
+what is the value of the option?
+the equivalent portfolio: buy e^(-r/4) stock, wait 3 months, then sell it and put money in bank
+
+the cost of the pf2 is e^(-r/4)s0 thus the cost of this option must be e^(-r/4)s0
+
+what is the shape of the graph?
+what is C(K) for small K?
+payout should occur, so it we assume it does occur, then price should be St-Ke^(-rt)
+however we know this is not acutally for sure (not 100% going to happen)
+so the price should be slightly higher
+
+
+note: a call is "in the money" if St>K
+

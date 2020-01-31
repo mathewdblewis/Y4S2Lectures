@@ -1,0 +1,50 @@
+Fri 31 Jan 2020 08:44:16 PST
+Math346 lec012
+
+given ∆U = 0 on region R, then foral p in R a ball or rad r0>0 about p
+that is inside R we have
+u(P) = ∫u(x)dx over ∂B(P,r0)   (R≤R^n then x in R^n)
+we call this the mean value property
+
+method of proof
+assume u* is a solution of ∆u=0 in R
+fix P, r0 appropriately and consider ∆u=0 on B(P,r0)
+st. u=u* on B(P,r0)
+to do this apply laplace on a disc
+
+
+
+
+the maximum principle
+the solution doesn't have a max or min in the interior of the domain
+notice this result is implied by the proof from before for time dependent max principle
+
+
+
+
+wellposedness and uniqueness:
+
+def: a problem is well posed iff there is a unique solution
+that depends continuously on BC and IC (boundary conditions and initial conditions)
+
+suppose we have ∆u1=0 in R with u1=f(x) on the boundary
+suppose we have ∆u2=0 in R with u2=g(x) on the boundary
+
+set v=u1-u2 then ∆v = 0 (by linearity) in R
+also v=f(x)-g(x) on the boundary
+say f and g are close, then by the maximum principle, v is small (less than max(f-g))
+
+proof of uniqueness:
+say we have solutions u1 and u2
+set v=u1-u2, then ∆v=0 in R and v=0 on ∂R
+then by max principle, the only solution is v=0
+
+
+solvability condition:
+consider instead ∆u=0 in R and -k0*(ux,uy) = h on ∂R
+k0 is a vector and h a scalar
+
+integrate ∆u=0 on R
+0 = ∫∫∫∆udv over R = ∫∫∫grad(grad(u))dV = ∫∫u'*ndS
+where n is the normal vector
+

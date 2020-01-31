@@ -1,0 +1,77 @@
+Fri 31 Jan 2020 10:18:07 PST
+Math493 lec012
+
+
+finishing from last time:
+recall built in skolem function
+foral ø(v,w), there is symbol fø st. T|=foral w, ø(v,w)
+suppose M|=T, we want to expand M to be a model of T*
+let M0 = M
+define L(i+1) structure M(i+1) expand Mi as follows
+
+pick an arbtrary z in M (the default value)
+cosndier an Li-formula ø(v,w) and a tuple a in M
+if Mi |= "TE v ø(v,a)", then let b in M be st. Mi |= ø(b,a) and define fø^M(i+1)(a) = b
+otherwise define fø(a) = z
+
+then M(i+1) |= "FA w, TE v, ø(v,w) -> ø(fø(w),w))"
+so M(i+1) |= T(i+1)
+
+let M* be the L* expansion of M obtained at the end of this process, then M* |= T*
+
+
+theorem: (downard lowneheim skolem)
+suppose M is an L-structure and X≤M
+then there is an N st. N<<M, X≤N, |N|≤max{|X|,|L|,|Naturals|}
+
+proof:
+wlog thm(M) has built-in skolem functions
+let X0 = X U {c^M: c is a constant symbol}
+X(i+1) = Xi U {f^M(a): a in Xi and f is a function symbol}
+let N = U Xi over all i in [0,1,...]
+
+from here it is clear that |N|≤max{|X|,|L|,|nat|}
+
+define c^N = c^M foral constants
+R^N = R^M intersect N^K for each k-ary relation R
+f^N = f^M|N^k for each k-ary function f
+by construction f^N|N^k:N^k -> N
+then N≤M
+
+to check that N<<M, we use tarski vaught test
+
+
+
+theorem: upward LS (lowenheim skolem)
+suppose M is an L-structure and k≥max{|M|,|L|,|Nat|} then there is N st. M<<N and |N|=k
+
+proof:
+first by weak upward LS get N' st. M≤N' and |N|≤k
+let X≤N' be st. M≤X and |X|=k
+by downward LS get N≤N' st. X≤N and |N|≤K so |N|=k
+
+
+
+
+in the text, we just finished section 2.3 and now will do section 2.2
+
+
+def: let T an L-theory and k a cardinal
+define I(T,k) to be the number of isomorphism classes of T of size k
+
+
+def: T is called k-catagorical iff I(t,k) = 1
+
+
+examples: let L=ø and T=T∞
+recall T∞ is the collection of statements
+"there are 2 different things, there are 3 different things ... "
+T is k catagorical for all infinite k
+because an L-isomorphism here is just a bijection
+
+example: L={≤} and T=DLO (dense linear orders without endpoints)
+cantor proved (see section 2.4 of text) that if M|=T and M is countable then M~(Q,<)
+so DLO is countably catagorical
+
+on the other hand if k is uncountable, then you have I(T,k) = 2^k
+

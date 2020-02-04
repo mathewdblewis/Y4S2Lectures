@@ -2,25 +2,84 @@ Tue  4 Feb 2020 10:21:19 PST
 Math493 lec013
 
 
+recall I(T,k) = # of isomorphism classes of models of T of cardinality k
+T is k-categorical if I(T,k) = 1
+
+example: we will show ACFp is k-categorical for uncountable k but not countably categorical
+
+def: let K be a field and F be its prime subfield
+say a1...an in K, we say they are algebriacally independent over F iff
+foral non constant f(x1...xn) in F[x1...xn], f(a1...an) ≠ 0
+
+def: a set A≤K is alg ind over F if all finite subsets are
+
+
+def: a transendence basis for K over F is a maximal alg ind set
+
+fact: every field has a transcendence basis over its prime subfield, possibly the empty set
+fact: any two transedence bases K/F have the same cardinality
+      we call this size the transedence degree, written trdegF(K)
+fact: if K and L are alg closed and trdegF(K) = trdegF(K) then K isomorphic to L
+cor:  closed fields are isomorphic upto characteristic and transendence degree
+
+fact: if K is alg closed field, then |K| = max{|Nat|,trdegF(K)}
+
+NOTE: ACFp means algebraically closed field of of characteristic p
+
+thus if K,L |= ACPp and |K|=|L|>|Nat| then trdegF(K) = trdegF(L), thus K ≈ L
+thus ACFp is kappa catagorical for all uncountable k
+
+if k is countable, the number of models of ACFp of size |nat| = |nat|
+the models are the algebriac closures of F,F(x),F(x1,x2)...
+
+in particular closure(Q) !≈ closure(Q(x)) however closure(C) ≈ closure(C(x))
 
 
 
+theorem: (morley's catagoricity theorem)
+suppose L a countable language an T an L-theory, if T is k-catagorical for some uncountable k
+then T is k-catagorical foral uncountable k
 
 
 
+theorem: vaughts test
+let L be a language and T an L-theory without finite models
+if T is k-catagorical for some k≥|L|, then T is complete
+
+recall completeness means all models of T agree on all sentences
 
 
+proof: suppose M|=T and N|=T we want to show M==N (elementary equiv)
+by lowenheim skolem, there is M`==N st. |M'|=k and there is N' st. N'=N and |N'| = k
+M' ≈ N' because of catagoricity
+thus M==M'≈N'==N thus M==N
+
+example: T∞,DLO, ACFp are complete
 
 
+an application of this:
+theorem: let ø be an L-ring-sentence, TFAE:
+(1)  C |= ø
+(2)  ACF0 |= ø
+(3)  TE Model of ACF0, st. M|=ø
+(4)  for arbitrarily large primes p, ACPp |= ø
+(5)  for arbitrarily large primes p, clos(Fp) |= ø
+(6)  TE n FA p>m, if p prime then ACPp |= ø
+(7)  TE m FA p>m, if p prime then clos(Fp) |= ø
 
 
+PF: (1) <=> (2) <=> (3) and (4) <=> (5) and (6) <=> (7) are all from the fact
+that all ACFq are complete (q prime or 0)
 
+proof that (2) => (6)
+suppose ACF0|=ø, by compactness, TE ∆≤ACF0, ∆ finite st. ∆|=ø
+since ACF0 is axiomatized by field and alg closed and char≠2,≠3 ...
+foral but finitely many primes p, ACFp |= ∆
 
+proof that (6) => (4) (this is trivial)
 
-
-
-
-
-
-
+proof that (5) => (2)
+suppose ACF0 !|= ø, since ACF0 complete, ACF0 |= not ø
+by (2) => (6) for not ø, we get that all but finitely many, ACFp |= not ø
+so all but finitely many  ACFp !|= ø
 

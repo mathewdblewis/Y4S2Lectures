@@ -1,0 +1,37 @@
+Tue  4 Feb 2020 08:41:05 PST
+Math346 lec013
+
+he does a specific example that results in integrating the boundary function against sin(nπx/L)
+this gives the values of bn for n in [1,∞)
+this is tedious and not enlightening
+
+
+
+
+24=16+8
+8=4+4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

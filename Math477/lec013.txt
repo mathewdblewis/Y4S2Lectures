@@ -1,0 +1,75 @@
+Tue  4 Feb 2020 09:29:57 PST
+Math477 lec013
+
+midterm upto chapter 5
+
+cost of a call or share when ex time is fixed as a function of strike price k
+theorem: C(K) is non increasing and convex (proved last time)
+theorem: C(K+h)≥C(K)-he^(-rt)
+
+proof:
+PF1 buy call with strike price K_h
+PF2 buy call with strike price K, borrow he^(-rt)
+
+
+     cost            payout
+PF1  C(K+h)          (St-(K+h))`
+PF2  C(K)-he^(-rt)   (St-K)`-h
+it remains to be shown that (St-K)`-h ≤ (St-(K+h))`
+to see this, we do the following:
+(St-k)` = ((St-(k+h))`+h)` ≤ (St-(k+h))`+h` = (St-(k+h))`+h    (because h≥0)
+thus (St-k)`-h ≤ (St-(k+h))`
+thus by gloop, cost(PF2)≤cost(PF1)
+thus the inequality of the theorem holds
+
+
+
+gloop abuse (this is an error):
+consider a call on a share with strike price K, prove the cost of the call C ≥ s-Ke^(-rt)
+here is a faulty answer:
+PF1: buy the call
+PF2: buy the share, and borrow Ke^(-rt) from the bank
+If St>K then PF1 pays, St-K and PF2 pays St-K
+thus by loop, cost of PF1 = cost of PF2
+if St≤K then PF1 pays nothing and PF2 pays St-K≤0
+so payout of PF2 ≤ payout of PF2
+thus by gloop, cost(PF2) ≤ cost(PF1)
+thus in both cases, cost(PF2) ≤ cost(PF1)
+
+
+recall an index is a weighted combination of stocks: w1S1+...WnSn
+we can also have a call (or put) on an index
+
+we want to relate the cost of a call on an index
+with the cost of a call on component stocks
+
+PF1: compare buying w1 calls on S1 with strike K1
++ w2 calls on S2 with strike K2 etc
+PF2: buy one call on index with strike w1K1+...wnKn
+
+payout1: w1(S1-K1)`+...wn(Sn-Kn)`
+payout2: ((w1S1(t)+...wnSn(t))-(w1K1+...wnKn))`
+= (w1(S1(t)-K1) + ... wn(Sn(t)-Kn))`
+≤ (w1(S1(t)-K1))` + ... (wn(Sn(t)-Kn))`
+= w1(S1(t)-K1)` + ... wn (Sn(t)-Kn)`
+= payout(pf1)
+
+cost of a call on index with strike w1K1+...wnKn ≤
+w1(call on S1 with strike K1) + ... wn(call of Sn with strike Kn)
+
+
+
+arbitrage theorem: (chapter 6)
+consider n gets whose payout depends on which of m possible outcomes occur
+the payout of each bet is determined by which of the n outcomes occur
+the net payout matrix A is defined so that Aij is the payout given for bet i if outcome j happens
+
+example: ten hourses, the bookie offers a bet 7:1 on redrum
+this means you pay 1 dollar and get 1+7 back if redrum wins
+so the matrix is [-1 -1 -1  7 -1 -1 -1 -1 -1 -1]
+
+arbitrage theorem:
+let A be an nxm matrix, then one of the following happens:
+(1)  TE x in R^n st. x^TA is pointwise positive
+(2)  TE p in R^m with pi≥0 and ∑pi=1, st. Ap=0
+

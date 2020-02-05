@@ -1,0 +1,2 @@
+expand injective implies surjective argument
+to 4 square theorem and rational functions rather than just polymaps

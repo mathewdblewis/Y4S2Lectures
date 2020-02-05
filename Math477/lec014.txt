@@ -1,26 +1,81 @@
 Wed  5 Feb 2020 07:26:22 PST
 Math477 lec014
 
+arbitrage theorem: let A be nxm matrix, either
+TE x in R^n st. x^TA>0 or
+TE p in R^m st. pi≥0, ∑pi=1, Ap=0
+
+consider buying x1 bet1, x2 bet2 ... xn betn
+what is net payout?
+if outcome j, payout is x^T*A*ej where ej is the vector with 1 at j and 0 elsewhere
+
+thus x^TA>0 means you always make money, that is, arbitrage
+so this theorem can be stated like so:
+
+if there is no arbitrage then there is a risk neutral measure
+
+
+to prove this we will use the seperating hyperplane theorem
+let U,V be two disjoint convex subsets of R^m
+then TE z≠0 in R^m and c in R st. xz≤c foral x in U and xz≥c foral x in V
+if V open then xz>c foral x in V
+
+in words, there is a hyperplane between any pair of disjoint convex sets
+
+
+
+proof for compact sets U and V
+let f(u,v) = |u-v|^2
+by compactness f attains its min, thus TE u0,v0 st. f(u0,v0)≤f(u,v) foral u in U and v in V
+since U and V are disjoint, u0≠v0, thus f(u0,v0)≠0
+let z=v0-u0 and c=(u0+v0)*z/2
+
+notice v0*z-c = v0z-(u0+v0)*z/2 = z(v0-u0)/2 = |z|^2/2 > 0, also u0z-c<0
+let r(t) = tv0+(1-t)v
+by convexity r(t) in V foral t in [0,1]
+f(u,r(t))≥f(u0,v0) foral t because v0 was chosen to minimize f
+f(u0,r(0))=f(u0,v0)
+he then does some differentiation, I think this is overly complex
 
 
 
 
+here is the theorem stated more generally (not his notes)
+consider convex space X
+foral disjoint convex U and V TE convex W st. U≤W and X-W convex
+try proving this instead
 
 
 
+now prove the arbitrage theorem:
+suppose (1) does not hold (no arbitrage)
+let U = {x^TA: x in R^n}   (row space of A)
+let V = {y: y>0 and y in R^m}
+by assumption U and V are disjoint
+he then proves U and V are convex (this is obvious)
+thus we may use the hyperplane theorem
+thus TE z≠0 and c st. uz<c foral u in U and vz>c foral v in V
+
+vz>c foral v in V and uz≤c foral u in U
+0 in U implies 0z≤c implies c≥0
+notice [a,a...a] in V for a>0 thus az>c implies 0≥c when taking limit a to 0
+thus c=0, thus the hyperplane goes through the origin
+vz>0 foral v in V and uz≤0 foral u in U
+
+if u in U then -u in U, thus uz≤0 and (-u)z≤0 thus uz=0 foral u in U
+thus Az=0 because z is orthogonal to all things in the row space U
+recall vz>0 foral v in V
+let v = [a,a,...a,1,a...a], then zv>0 because v in V
+as a->0, we have zv=z_j≥0
+so all components of z are non negative numbers
+so z≠0 (by the seperating hyperplane theorem) and zi≥0 foral i
+thus ∑zj>0, let p = z/∑zj, then p satisfies the theorem
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+V"t^2+V't=lV
+V = t^p
+p(p-1)t^(p-2)+pt^(p-1)=lt^p
+p(p-1)+pt=lt^2
 
 

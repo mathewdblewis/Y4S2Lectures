@@ -1,0 +1,85 @@
+Fri  7 Feb 2020 10:19:52 PST
+Math493 lec015
+
+
+let language L and T an L-theory
+we say T has quantelim (QE) iff:
+FA L formulas ø(x) TE a QF (quant free) formula k st.
+T |= FA x, (ø(x) iff k(x))
+
+NOTE: it is permitted for k to have free variables appearing that don't appear in ø
+
+theorem: in L=ø (the empty set), T∞ has QE
+proof: first suppose ø is a sentence
+
+since T∞ is complete either T∞ |= ø or T∞ !|= not ø
+if T∞ |= ø then T∞ |= "FA x, (ø iff x=x)"
+if T∞ |= not ø then T∞ |= "FA x, (ø iff x≠x)"
+now suppose ø has free variables x1...xn
+
+foral functions ø:{(i,j)| 1≤i<j≤n} -> {T,F} define Xø(x1...xn) like so:
+Xø(x1...xn) := (and xi=xj over all i,j st. ø(i,j)=T) and (and xi≠xj over all i,j st. ø(i,j)=F)
+Note that Xø is QF
+
+let A = {ø: {(i,j)| 1≤i<j≤n} -> {T,F}} st. TE a1...an in N st. Xø(a) and ø(a)
+
+
+case 1: A is empty
+if this case, N |= FA x, not ø(x)
+so N |= "FA x, ø(x) iff x1≠x1"
+since T∞ complete, T∞ |= "FA x, ø(x) iff x1≠x1"
+
+case 2: A is not empty
+let k(x1...xn) be "and over all ø in A of Xø"
+then by def of A, N |= "FA ø(x) -> k(x)"
+by completeness, so to for T∞ as for N
+
+suppose b1...bn in N and N |= k(b1...bn)
+then there is some ø in A st. N |= Xø(b1...bn)
+by def of A, there are c1...cn in N st.
+N |= Xø(c1...cn) and ø(c1...cn)
+
+This proof has gotten to harry for me
+
+
+this proof was a pain so we need better methods for checking this
+we will now work towards a test for this
+there is a large number of these tests, we will look only at some of them
+
+lemma: suppsoe M and N are L-structures and M a substructure of N (M≤N)
+suppose ø(x) is QF L-formula and a (a tupple) in M
+then M|=ø(a) iff N|=ø(a)
+
+the proof is boring he says, use induction on formulas
+
+
+theorem: say L has a constant symbol c and T be an L theory
+and ø(x) is an L-formula, then TFAE:
+(1)  TE a QF L-formula k st. T |= "FA x, (ø(x) iff k(x))"
+(2)  FA M|=T and N|=T, FA L-structure A st A≤M and A≤N and all a in A
+     M|=ø(a) iff N|=ø(a)
+
+proof: of 1=>2
+M |= ø(a) iff M |= k(a) becasue M|=T
+iff A |= k(a)           by lemma
+iff N |= k(a)           by lemma
+iff N |= ø(a)           because N |= T
+
+proof 2=>1
+easy cases: if T|="FA x, ø(x)" pick k to be "c=c"
+if T |= "FA x, not ø(x)" pick k to be "c≠c"
+we can assume neither of these hold
+
+let G = {k(x): k if QF and T|="FA x, ø(x)->k(x)"}
+let d be new constant symbols
+
+claim: (proof next time)  T union G(d) |= ø(d)
+
+say we prove the claim, then by compactness, there are k1...kn in G
+st. T union {k1(d)...kn(d)} |= ø(d)
+
+then T |= (k1(d) and ...kn(d) -> ø(d))
+since d isn't in the original langauge of T, we can interpret them however we like
+
+thus T |= "FA x, k1(x) and ... kn(x) iff ø(x)"
+

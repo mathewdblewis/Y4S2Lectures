@@ -1,0 +1,12 @@
+Thu  6 Feb 2020 12:59:35 PST
+CSC421 lec009
+
+this part of the course is more or less independent of the previous part
+however the previous part will be on the final
+
+
+
+interesting question: how long will the average game of snakes and latters take?
+
+
+

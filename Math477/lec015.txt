@@ -1,0 +1,36 @@
+Fri  7 Feb 2020 09:20:28 PST
+Math477 lec015
+
+arbitrage theorem:
+A nxm matrix, either (but not both) of these hold:
+(1)  TE x in R^n st x^T*A>0
+(2)  TE p in R^m, pi≥0, ∑pi=1, Ap=0
+
+notice if we put probability p on the bets, then because Ap=0
+all strategies (weighted bets) give 0 return
+
+
+if you are given a matrix he suggests when given such a matrix
+to check for a risk neutral measure p first
+
+consider nxn matrix A = -1 at all entries except diagonals, which are d1...dn
+solve Ap=0, ∑pi=1, pi≥0
+we get these equations:  dipi+(1-pi) = 0 for i in [1,n]
+so pi=1/(di+1) foral i
+so if ∑1/(di+1) = 1 we have a RNM (risk neutral measure) otherwise arbitrage
+
+we can construct the arbitrage by buying 1/(1+di) of bet i when ∑1/(1+di)<1
+net profit if j wins is -(∑1/(1+di)-1/(1+dj)) + dj/(1+dj)
+= -∑1/(1+di) + (1+dj)/(1+dj) = 1 - ∑1/(1+di) > 0, so we have arbitrage
+if ∑1/(1+di)>1, negate this strategy
+
+note that bookmakers will have ∑1/(1+di)>1 however they won't allow negative bets
+
+
+a systematic way of doing this, find a RNM
+given A, set Ap=0, ∑pi=1
+he sets up a linear system and solves
+if the solution has negative entries, we know there must be arbitrage
+
+note: we will only look at the 2x2 case because it naturally arises
+

@@ -1,0 +1,32 @@
+Fri  7 Feb 2020 08:52:49 PST
+Math346 lec015
+
+def: the odd extension of f(x) defined on 0 to L is given by:
+fodd(x) = f(x) for 0≤x≤L and -f(-x) for -L≤x≤0
+
+
+we call f(x) = ∑bn*sin(nπx/L) the fourier sine series
+the sum converges to the periodic extension of the odd extension of f(x)
+
+
+
+example:
+Find the fourier sine series of f(x)=1 on 0≤x≤L
+bn = 2/L ∫sin(nπx/L)dx over [0,L]
+= -2/(nπ) [cos(nπx/L)] over [0,L]
+= -2/(nπ) [cos(nπ)-1] = 0 for even n and 2/(nπ) for odd n
+
+so we get:
+1 = ∑4/((2k+1)π) sin((2k+1)πx/L) over k in [1,∞)
+notice this holds only for x in (0,L)
+he puts in x=L/2 to get π/4 = 1-1/3+1/5...
+
+
+
+Gibbs Phenomenon:
+approximate the infinite series with a finite truncation
+errors pile up at jump discontinueties
+as the number of modes increases the region where it is really far off shrinks (in width)
+but don't shrink in height
+the jump overshoots by about 9% of the total jump size
+

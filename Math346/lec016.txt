@@ -1,0 +1,58 @@
+Tue 11 Feb 2020 08:33:41 PST
+Math346 lec016
+
+
+f(x) ≈ a0 + ∑an cos(nπx/L) + ∑bn sin(nπx/L)
+
+example: f(x)=x
+x = ∑bnsin(nπx/L)
+bn = 2/L ∫xsin(nπx/L)dx over [0,L]
+
+he does the integration by parts and gets:
+bn = (-1)^(n+1)2L/(nπ)
+thus X ~ 2L∑(-1)^(n+1)/(nπ)sin(nπx/L)
+
+
+
+cosine series
+recall a function is even if f(x)=f(-x) FA x
+so if f is even f(x)sin(nπx/L) is odd
+1/L ∫f(x)sin(nπx/L)dx over [-L,L] = 0
+a0 = 1/(2L)∫f(x)dx = 1/L ∫f(x)dx over [0,L]
+an = 1/L ∫f(x)cos(nπx/L)dx over [-L,L] = 2/L ∫f(x)cos(nπx/L)dx over [0,L]
+
+def: for f(x) on 0≤x≤L the even extensio nof f is given by feven(x) = f(x) for 0≤x≤L
+and f(-x) for -L≤x<0
+
+hence, f(x) ~ a0 + ∑an cos(nπx/L)
+
+note: the sine and cosine are different extensions
+eg: f(x)=x goes to |x| in [-L,L] (cosine) vs x in [-L,L] (sine)
+
+notice the cosine extension is continuous and the sine isnt
+
+for f(x)=x we get a0 = 1/L ∫xdx over [0,L] = L/2
+an = 2/L ∫xcos(nπx/L)dx over [0,L] = 2L/(n^2π^2)(cos(nπ)-1)
+
+
+even and odd parts:
+for f(x) on -L≤x≤L when f(x) ~ a0 + ∑ancos(nπx/L) + ∑bnsin(nπx/L)
+
+
+continuous fourier series:
+thm: for peicewise f(x) the fourier series of f is cont and converges to f for -L≤x≤L
+iff f(x) is cont on -L≤x≤L and f(L)=f(-L)
+
+
+
+RANDOM SIDE QUESTION:
+say f,g cont on -L≤x≤L, what is the relationship between
+their fourier series and the fourier series of max{f,g}
+
+
+
+thm: for peicewise f, the fourier cosine series is cont+convergent for 0≤x≤L iff f con't
+
+thm: for peicewise f, the fourier sine series is con't+convergent for 0≤x≤L iff
+f con't and f(0)=f(L)=0
+

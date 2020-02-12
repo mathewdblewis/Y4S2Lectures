@@ -1,0 +1,35 @@
+Wed 12 Feb 2020 08:46:47 PST
+Math346 lec017
+
+term by term diff of fourier series:
+d/dx ∑cngn(x) = cngn'(x)
+
+thm: a con't fourier series can be diffed term by term if f' is peicewise smooth
+
+note: the result of differentiating the fourier cosine series of f is the fourier sine series of f'
+recall f(x) need only be continuous for the fourier cosine series to exist and be continuous
+
+example:
+x = L/2 - 4L/π^2 ∑1/(2k+1)sin((2k+1)πx/L)
+by diffing, we get
+1 = x' = 4/π ∑1/(2k+1)sin((2k+1)πx/L)
+he claims this holds
+
+
+thm: if f' is peicewise smooth then the fourier sine series of a cont function f can be
+diff term by term if f(0)=f(L)=0
+
+he proves this
+
+thm:
+if f' is peicewise smooth then the fourier sine series of a continuous function f
+cant be diff term by term
+however f'(x) ~ 1/L [f(L)-f(0)] + ∑[nπ/L bn + 2/L(f(L)(-1)^n-f(0))]cos(nπx/L)
+
+
+example: f(x)=x
+f'(x) = 1/L [L-0] + ∑[nπ/L bn + 2/L(L(-1)^n-0)]cos(nπx/L)
+= 1 + ∑[nπ/L bn + 2(-1)^n]cos(nπx/L)
+he claims the sum component goes to 0
+
+

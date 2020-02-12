@@ -1,0 +1,64 @@
+Wed 12 Feb 2020 09:31:41 PST
+Math477 lec017
+
+
+recall the arbitrage theorm:
+(1)  TE x st. x^TA>0       (arbitrage)
+(2)  TE p≥0 st. Ap=0       (RNM)
+
+
+recall this example:
+[ 5 -8  2]
+[-3  5 -1]
+
+recall there was no RNM
+
+he solves the linear programming problem by illistration
+
+
+
+fact: if a,b,c,d>0 and a/b<c/d then ab<(a+c)/(b+d)<c/d
+
+
+
+connecting the arbitrage theorem to option pricing
+reconsider previous example:
+100 goes up either to 200 or 50
+we have a call with SP = K
+the interest rate is R
+
+we get this matrix:
+     up             down
+bet [200/(1+R)-100  50/(1+R)-100]
+
+he gets this RNM:
+p = [1+2R  2-2R]/3
+
+he adds another row to introduce another bet, the call
+     up             down
+bet  [200/(1+R)-100  50/(1+R)-100]
+call [50/(1+R)-C     -C          ]
+
+beause only 1 p worked for the top row, specifically the one we found before
+we know there is only a solution if the new row times p is 0
+so we get an equation and solve for C
+
+he solves the equation, we get:
+C = [50/(1+R),0/(1+R)]*p
+notice this is the expectation wrt RNM of the payout
+
+
+theorem:
+given a collection of instruments with net returns Aij (return of ith intrument when j happens)
+and given a new instrucment with payout k1...km
+a price for new instrucment is arbitrage free iff
+P = E_(RNM)(P) for some RNM for A     (P is payout)
+
+he proves this
+
+
+
+key formula:  price = E_RNM(P)
+where P is the payout
+
+

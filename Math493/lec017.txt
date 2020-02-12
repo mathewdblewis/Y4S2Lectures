@@ -1,0 +1,89 @@
+Wed 12 Feb 2020 10:19:52 PST
+Math493 lec017
+
+
+recall T_FA = {ø:ø is a universal sentence and T|=ø}
+
+lemma: M|=TFA iff TE N, N|=T and M≤N
+proof: (backwards)
+suppose M≤N and ø in T_FA
+
+say ø is "FA x ø(x)" where ø is QF then N|=ø so foral a in N, N|=ø(a)
+in particular foral a in M, N|=ø(a) sine ø is QF foral a in M, M|=ø(a), so M|=ø
+
+proof: (fowards)
+suppose M |= T_FA
+let ∑=diag(M)UT
+if N|=∑ then N|=T and M≤N
+so we only need to show ∑ is consistent
+
+
+suppose ∆≤∑, ∆ finite
+we may assume ∆ = T U {ø(cm1,...cmn)}
+for some L-formula ø(x1...xm)
+importantly, ø is QF
+then Mm |= ø(cm1...cmn) since Mm |= diag(M)
+thus M |= "TEx, ø(x)"
+thus M |!= "FAx, not ø(x)"
+since M|=T_FA and "FAx, not ø(x)" is a universal sentence
+this means that "FAx, not ø(x)" is not in T_FA
+thus T|!="FAx, not ø(x)"
+thus TE N0|=T st. N0!|="FAx, not ø(x)"
+so N0|="TEx,ø(x)"
+interpret cm1...cmn in N0 as a witness to this and we get a model of
+T U {ø(cm1,...cmn)}
+
+
+def: let L be a language and T an L-theory
+T has algebraically prime models iff:
+FA A|=T_FA, TE M, M|=T, i:A->M  (i an embedding)
+FA N|=T, j:A->N
+j extends to jhat:M->N
+
+in english, we can put A inside M so that for any way of putting A in N
+we can get a map from M to N
+M is the "smallest" model of T containing A as a substructure
+
+
+example: ACF0
+ACF0 has algebracially prime models
+proof: suppose A|=ACF0_FA, so A is an integeral domain let M = cls(frac(A))
+then M is the algebraically prime model over A
+
+
+
+def: suppose M,N|=T and M≤N
+we say M is simply closed in N, denoted M <_s N iff FA QF L-formulas ø(x,y)
+and FA a in M, if N|="TEy,ø(a,y)" then M|="TEy,ø(a,y)"
+
+this is a weak version of elementary substructure
+
+example: suppose M,N |= ACF and M≤N, then M<_s N
+proof: suppose ø(x,y) if QF, a in M and N|=ø(a,b)
+must show M|=ø(a,c) for some c in M
+we can assume ø is in DNF (disjunctive normal form)
+so ø is V((& ai) & (& not bj))
+in fact, since N|=ø(a,b), N models one of the disjuncts
+so we can assume ø(x,y) = (& ai(x,y)) & (& not bj(x,y))
+with each ai and bj atomic
+
+what are the atomics in L_rng? they are just polynomials equated to 0
+polynomials come from Z[x,y]
+we get Z because we can add things to themselves any finite number of times
+
+when we plug in elements of M for the x's
+we get single-variate polynomials with coefs in M
+thus ø(a,y) is of the form ((& pi(y)=0) & (& qj(y)≠0))
+for some pi,qj in M[y]
+
+if any pi's appear in ø then pi(b)=0
+thus b in N is algebraic over M, since M is alg closed b is in M
+
+we still must consider what happens when ø(a,y) only has negated litterals
+so we have ø(a,y) = "& qj(y) ≠ 0"
+notice "& qj(y) ≠ 0" excludes only finitely many elements
+because each qj has finitely many roots and there are finitely many qj's
+also ACFp always has infinitely many elements, thus this can be satisfied
+by some c in M st. FA j, qj(c)≠0
+notice because this worked in N this rules out the case where qj is the 0 polynomial
+

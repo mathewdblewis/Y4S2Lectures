@@ -1,0 +1,24 @@
+Thu 13 Feb 2020 13:02:20 PST
+CSC421 lec011
+
+conditional independence:
+abilityInReading and lengthOfArms are dependent
+however if you condition on age then abilityInReading and lengthOfArms are independent
+
+
+
+laplace estimator:
+add 1 to the count for all attribute value class combinations
+add k (number of possible attribute values) to the denominator
+
+eg: gender has 2 values so add 2 to denominator
+age has 3 value, young, middle aged, old, so add 3 to denominator
+
+naive assumption (naive model):
+attributes are independent given a class
+eg: P(young & high colestorol) = P(young)P(high colestorol)
+
+
+
+Bayesian networks:
+see the slides

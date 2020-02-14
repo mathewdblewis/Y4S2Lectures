@@ -1,0 +1,33 @@
+Fri 14 Feb 2020 08:32:10 PST
+Math346 lec018
+
+
+thm: the fourier series of a count function u(x,t)
+u(x,t) ~ a0(t) + ∑[an(t)cos(nπx/L)+bn(t)sin(nπx/L)]
+this can be diffed term by term wrt t yeilding:
+ut(x,t) ~ a0'(t) + ∑[an'(t)cos(nπx/L)+bn'(t)sin(nπx/L)]
+
+
+
+
+notice if f is periodic with period T and ∫fdx over [0,T] = 0
+then ∫f is periodic
+this allows us to define the particular integral as the "best"
+because this forces a particular choice for c so that the integral remains 0
+
+
+thm: a fourier series can always be integrated to a series (not nessiarily fourier)
+
+prf: let f(x) ~ a0 + ∑[an cos +bn sin]
+set F(x) = ∫f(t)dt over [-L,x] cont bc f is peicewise smooth
+so F(x) has cont fourier series iff F(-L)=F(L)
+
+F(-L) = 0 and F(L) = ∫f(t)dt over [-L,L]
+F(L) = 0 iff a0=0
+
+
+
+example: 1 ~ 4/π(sin(πx/L) + 1/3 sin(3πx/L) + ...)
+integrate from 0 to x
+
+

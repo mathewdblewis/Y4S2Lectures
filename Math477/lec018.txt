@@ -2,25 +2,35 @@ Fri 14 Feb 2020 09:32:57 PST
 Math477 lec018
 
 
+cost = E_(rnm)(payout)
+
+black-scholes: pricing via computing E_RNM
+
+price call with strike 150
+cost = p2*50/(1+R)
 
 
 
+recall model St by GBM(S0,µ,ø^2)
+
+say the share either moves up or down, then we do 2 time steps
+1 is up and 0 is down
+bet1: buy at 0 sell at 1
+bet2: if the first step is up buy at 1 and sell at 2
+bet3: if the first step is down buy at 1 and sell at 2
+payout matrix:
+      11                     10                    01                    00
+bet1 [us/(1+R)-s             us/(1+R)-s            ds/(1+R)-s            ds/(1+R)-s           ]
+bet2 [u^2s/(1+R)^2-us/(1+R)  uds/(1+R)^2-us/(1+R)  0                     0                    ]
+bet3 [0                      0                     uds/(1+R)^2-ds/(1+R)  d^2s/(1+R)^2-ds/(1+R)]
+
+
+bet x1...xk:
+if share follows path x1...xk in first k steps buy k and sell at k+1
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+bet abcd
+means if you have seen this sequence, a then b then c then d
+for a,b,c,d in {0,1}, then buy then sell on the next stage
 

@@ -1,26 +1,85 @@
 Fri 14 Feb 2020 10:17:59 PST
 Math493 lec018
 
+recall (main QE test)
+let T be an L theory where L has a constant symbol
+suppose that foral QF ø(x,y), if M,N|=T
+and A≤M and A≤N and a in A
+then M|="TE y, ø(a,y)" => N |= "TE y, ø(a,y)"
+then T has QE
+
+thm: suppose L has constant symbol and T is an L-theory, suppose:
+1  T has alg prime models
+2  whenever M,N|=T and M≤N and M <_s N
+then T has QE
+
+proof: suppose M,N|=T, A≤M and A≤N a in A
+ø(x,y) is QF and M|="TEy,ø(a,y)"
+since T has algprime models, let R|=T be algprime over A
+by def of algprime, since A embeds in M, R embeds in M, wlog R≤M
+by property 2, R <_s M
+because R <_s M, since M |= "TEy, ø(a,y)" and a in R, R|="TEy,ø(a,y)"
+let b in R be st R|=ø(a,b)
+since A embeds in N, R also embeds in N
+say R≤N, then since ø is QF, N|=ø(a,b)
 
 
 
+cor: ACF has QE
+prf: we checked the hypotheses of the theorem last time
+
+
+def: a theory T is model complete iff whenever M,N|=T and M≤N then M<<N
+(<< is elementary substructure)
+
+prp: if T has QE then T is model complete
+prf: suppose M,N|=T and ø(x) a formula and a in M and M≤N
+by QE there is QF k(x) st. T|="ø(x) iff k(x)"
+thus M|=ø(a) iff M|=k(a) thus N|=k(a) thus N|=ø(a)
 
 
 
+summary of properties of theories:
+QE, model completeness, completeness
+QE implies model completeness
+
+model complete doesn't imply QE, eg: Th(R,+,-,*,0,1)
+model complete doesn't imply complete, eg: ACF has QE and thus model complete
+but not complete, similarly this is an example of when QE doesn't imply complete
+
+complete doesn't imply model complete, eg TH([0,1],<)
+complete doesn't imply QE, again, example Thm(R,+,-,*,0,1)
+
+
+prp: suppose T model complete and TE M0|=T st. M0 embeds into all models of T, then T complete
+prf: suppsoe M,N|=T, then M0 embeds in M
+so by model completeness, M0 embeds into M, so M0 == M
+
+similarly, M0==N so M==N
+cor: ACFp is complete foral p (prime of 0)
+PF: QE implies model compelte and we take the M0 to be cls(Q) or cls(Fp)
 
 
 
+now some stuff on alggeo:
+def: let R be a commutative unital ring, an ideal I≤R is radical iff 
+whenever r in R and n in N and a^n in I then a in I
+in english, its closed under roots
+notice this is weaker than prime ideal
+
+let field K, let S≤K[x1...xn], V(S) = {a in K^n: FA f in S, f(a)=0}
+A set of the form V(S) is called zariski-closed
+
+given a set Y≤K^n, the ideal of Y is I(y) = {f in K[x1...xn] : FA a in Y, f(a)=0}
 
 
+theorem: (hilberts nullstellensatz)
+the map y|->I(y) is a bijection between Zariski-closed sets in K^n and radical ideals in
+K[x1...xn] the inverse is J->V(J)
 
 
-
-
-
-
-
-
-
-
-
-
+lma: suppose X<K^n then I(X) is a radical ideal in K^n
+prf: 0 in I(X)
+consider f,g in I(X), then for a in X, (f+g)(a) = f(a)+g(a) = 0 + 0 = 0, thus f+g in I(X)
+consider f in I(X) and g in K[x1...xn] and a in X then (fg)(a) = f(a)g(a) = 0*0 = 0 thus fg in I(x)
+finally, if f^n in I(X) then FA a in X, f^n(a)=0, thus f(a)=0, thus f in I(X)

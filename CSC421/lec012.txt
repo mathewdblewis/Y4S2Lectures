@@ -1,0 +1,29 @@
+Mon 24 Feb 2020 12:58:21 PST
+CSC421 lec012
+
+after 1st order logic look at inference
+forward backward chaining and resolution
+convert any 1st order logic database to cnf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

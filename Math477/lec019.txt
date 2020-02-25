@@ -2,25 +2,75 @@ Tue 25 Feb 2020 09:21:30 PST
 Math477 lec019
 
 
+recall multi-period binomial tree
+
+the outcome is a sequence of n 0's and 1's
+eg: x1,x2...xn = (1,1,..1,0,0,..0)
+0 = down, 1 = up
+
+bet(x1...xk) = if first k steps are x1...xk
+then buy at time k and sell at time k+1 else do nothing
+
+he builds the payout matrix for these bets
+notice it is 2^n-1 by 2^n
+and we have the constraint that all rows sum to 1 (for the RNM)
+so we have as many constraints as variables and thus a unique solution can exist
+
+recall for RNM and for any bet, E_rnm(PV payout) = 0
+
+recall PV payout means present value payout
+
+notation: P(x1,x2...xk) = P(share price follows x1...xk for first k steps)
+
+all bets risk neutral
+consider bet x1...xk
+0 = E_rnm(PV payout) = -p(x1...xk)u^(x1...xk)d^(k-(x1...xk))s/(1+R)^k
++ p(x1...xk,1)u^(x1...xk+1)d^(k-(x1...xk))s/(1+R)^(k+1)
++ p(x1...xk,0)u^(x1...xk)d^(k-(x1...xk+1))s/(1+R)^(k+1)
+
+dividing by u^(x1...xk)d^(k-(x1...xk))s/(1+R)^(k+1) gives
+
+0 = -P(x1...xk)(1+R) + P(x1...xk,0)d + P(x1...xk,1)u = 0
+1+R = P(x1...xk,0)/P(x1...xk)d + P(x1...xk,1)/P(x1...xk)u
+1+R = P(x(k+1)=0|X1=x1,X2=x2...Xk=xk)d + P(x(k+1)=1|X1=x1,X2=x2...Xk=xk)u
+
+notice P(x(k+1)=0|X1=x1,X2=x2...Xk=xk) + P(x(k+1)=1|X1=x1,X2=x2...Xk=xk) = 1
+let A = P(x(k+1)=0|X1=x1,X2=x2...Xk=xk) and B = P(x(k+1)=1|X1=x1,X2=x2...Xk=xk)
+then we have:
+
+1+R = Ad+Bu and A+B=1
+A = 1-B thus (1-B)d+Bu = 1+R thus B = (1+R-d)/(u-d)    (prob going up)
+and A = (u-1-R)/(u-d)    (prob going down)
+
+conclusion: the RNM for n-step binomial tree is MRW (multiplicative random walk)
+with Pup = (1+R-d)/(u-d) and Pdown = (u-1-R)/(u-d)
 
 
 
+recall we model a share with GBM(s,µ,ø^2)
+approximate with MRW
 
+scrap the up and down probabilities and replace with probs from RNM
 
+u = e^(ø√∆) and d = e^(-ø√∆)
+Pup = (1+R-d)/(u-d) and Pdown = (u-1-R)/(u-d)
 
+now take lim ∆->0
+recall R+1 = e^(r∆)
 
+let Zi = e^(ø√∆) with prb (1+R-d)/(u-d) and 1/e^(ø√∆) with prb (u-1-R)/(u-d)
+Xi = 1 with prb pup and 0 with prb pdown
 
+let Sn∆ = sZ1*...Zn
 
+Sn∆ = se^(ø√∆(X1+...Xn)-(n-(X1...Xn)))
+= se^(ø√∆((2x1-1)+...(2xn-1)))
+= se^(ø√∆(y1+...yn))
+ø√∆(y1+...yn) ≈ N(mean = ø√∆*n*E(y), var = ø^2∆*var(y))
 
+E(y) = pup-pdown = (1+R-d)/(u-d) - (u-(1+R))/(u-d) = (2(1+R)-u-d)/(u-d)
 
-
-
-
-
-
-
-
-
-
-
+1+R = e^(r∆) = 1+r∆ r^2∆^2/2 + ...
+u = e^(ø√∆) = 1+ ø√∆ + ø^2∆/2 + ...
+d = e^(-ø√∆) = 1-ø√∆ +
 

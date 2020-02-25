@@ -1,0 +1,86 @@
+Tue 25 Feb 2020 10:29:15 PST
+Math493 lec019
+
+
+recall K is an alg closed field
+I≤K[x1...xn] is a radical ideal if I is an ideal and foral f in K[x] foral n in N
+f^n in I implies f in I
+for X≤K^n I(S) = {f in K[x]: foral a in X, f(a)=0}
+for S≤K[x], V(S) = {a in K^n: foral f in S, f(a)=0}
+X≤K^n is zarski-closed if TE S, X=V(S)
+
+
+theorem: (nullstellenzatz)
+the map X->I(X) is a bijection between zariski closed subsets of K^n
+and radical ideals in K[x1...xn] with inverse J->V(J)
+
+
+facts from algebra:
+every ideal in K[x1...xn] is finitely generated (hilbert's basis theorem)
+if J'≤J are ideals in K[x1...xn] and x in J-J', then TE prime ideal P st. J'≤P
+and x not in P
+
+
+proof of nullstellensatz:
+first, suppose X is zariski closed, we show X=V(I(X))
+suppose a in X, then for any f in I(x), f(a)=0
+thus a in V(I(X)) because then at a, any f vanishes, thus X≤V(I(X))
+
+say a in V(I(X)), let S≤K[x1...xn]] be st. X=V(S)
+if a not in X, then a not in V(S)
+so there is some f in S st. f(a)≠0
+but S≤I(V(S)), thus f in I(V(S))
+thus a not in V(I(V(S))) = V(I(X)), contradiction, so a in X
+
+
+suppose J is a radical ideal in K[X], we must show J=I(V(J))
+by chasing definitions, J≤I(V(J))
+
+claim: suppose J' a radical ideal and J'<J then V(J)<V(J')
+(we prove this later)
+
+suppose we prove the claim
+If J≠I(V(J)) then J<I(V(J))
+by the claim V(I(V(J)))<V(J)
+by the first part of the proof we have V(J)=V(I(V(J)))<V(J)
+however V(J)<V(J) is false, thus J≠I(V(J)) is false and thus J=I(V(J))
+
+
+
+so we now prove the claim   (J'<J then V(J)<V(J'))
+by definition, if J'≤J then V(J)≤V(J') so it is sufficient to show inequality
+pick f in J-J'
+let P be a prime ideal in K[x] st. J'≤P and f not in P   (by the fact stated before)
+if we find b in V(P) st. f(b)≠0 then also b in V(J') and b not in V(J)
+
+let F = cls(frac(K[x]/P))
+then K≤F (upto isomorphism) and K|=ACF and F|=ACF
+then K≤≤F (K is an elementary substructure of F) because ACF is model complete
+
+let q1...qm be generators for J' in K[x]
+let ai in F be the image of xi
+then since each qi in P, qi(a)=0
+since f not in P, f(a)≠0
+F |= "TE w, q1(w)=0 & ... qm(w)=0 & f(w)≠0"
+
+since the expresion is an Lk-sentence, K≤F
+we have K|="TE w, q1(w)=0 & ... qm(w)=0 & f(w)≠0"
+
+Let b in K^n be a witness to this, then qi(b)=0 so b in V(P), but f(b)≠0
+
+
+
+
+def: let J≤K[x] be an ideal, the radical of J denoted √J = {f in K[x]: TE n, f^n in J}
+one can check that V(J) = V(√J) = V(I(V(J)))
+thus by nullstellensatz, √J = I(V(J)))
+
+
+cor: suppose p1(x)...pm(x) in K[x] then if <p1(x)...pm(x)> ≠ K[x] then TE b in K^n st.
+p1(b)=...pm(b)=0
+
+prf:
+suppose there is no common zero, let J = <p1...pm>, then V(J)=ø, then I(V(J)) = K[x]
+then 1 in I(V(J)) = √J, so TE n, 1^n in J so 1 in J
+
+

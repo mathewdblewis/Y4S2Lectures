@@ -1,0 +1,33 @@
+Tue 25 Feb 2020 08:36:58 PST
+Math346 lec019
+
+
+the wave equation:
+perturbed string
+vertical displacement y = u(x,t)
+newtons law: consider an infinitesemally small segment between x and x+∆x and the mass density
+p0(x) is known
+total mass ≈ p0(x)∆x
+
+...
+
+we get:
+
+p0(x)utt = T0*uxx + p0(x) Q(x,t)
+
+1d wave equation: if the only body force is gravity, then Q=-g
+if its small we can ignore it so we get:
+
+p0(x)utt = T0uxx or eq. utt = c^2 uxx
+when you have a uniform string
+
+
+boundary conditions:
+(1) at x=0,L the string is fixed, u(0,t)=u(L,t)=0
+or its varied in a particular way: u(x,t) = f(t) and u(L,t)=g(t)
+(2) one end of the string is attached to a dynamical system
+eg: at x=0 the string is attached to a spring mass system
+
+
+we can combined these to make more complex systems
+

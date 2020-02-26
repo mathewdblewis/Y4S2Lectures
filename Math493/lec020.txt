@@ -1,26 +1,73 @@
 Wed 26 Feb 2020 10:19:15 PST
 Math493 lec020
 
+question: suppose M == N and |M|=|N|, but M !≈ N
+
+recall: suppose M an L-struct
+L_M = L U {cm|m in M} where cm's are new constants
+If A≤M, L_A = L U {cm| m in A}
+then M_A is the L_A struct obtained from M by defining c_m^(M_A) = m      foral m in A
+
+diag_el(M) is the L_M-theory st:
+diag_el(M) = {ø| ø is an L_M sentence and M_M |= ø} = Th(M_M)
+
+if N an L_M struct, N |= diag_el(M) iff there is elementary embedding j:M->N|L
+
+
+example:
+let N = {Nat,+,1,<}, L = {+,1,<}
+let d be a new constant symbol
+let T = diag_el(N) U {d>1,d>1+1...}
+notice T is consistent by compactness
+
+let R|=T
+by downward lowenhiem-skolem there is a countable M'|=T st. d^R in M'
+let M = M'|L    (restrict the language back to the one without d)
+then M == N and both M and N are countable
+
+however M and N are different, M has an "infinite element"
 
 
 
+let ∑(x) = {x>1,x>1+1...x>1+1+1...}
+∑ is a set of L-formulas
+in M there is an element that satisfies ∑ but in N there is not
+we say ∑(x) is realized in M but not in N
+we say ∑(x) is omitted in N
+
+
+def: let M be an L-struct, let n>0 in Nat and A≤M
+an n-type of A is a set ∑(x1...xn) of L_A formulas in free variables x1...xn
+st. in some N |= Th(M_A),
+∑ is realized in N, eg: TE b1...bn in N st. FA ø(x1...xn) in ∑(x1...xn), N|=ø(b1...bn)
+
+
+for example, the ∑ is the previous example is a 1-type over ø
 
 
 
+example: let M = (Q,<), A = {0,1,2...}
+∑(x) = {0<x,x<1...}, this is a 1-type of A
+note that ∑ is consistent because 1/2 realizes ∑ in M
+
+ex: ∑(x) = {x<0,x>1,x<2,x<3...}
+this is not consistent because it is not satisfiable in any model
+that is, if M|=Th(M_A), then N|="0<1" and N|="< is a linear order"
+so there is no x st. x<0 and 1<x, so ∑ is not a type
+
+ex: M be an infinite L-struct
+let ∑(x) = {x≠m| m in M}
+∑ is consistent because we can let N be an elementary extension of M but not equal to M
+then N_M |= Th(Mm) and ∑ is realized in N so ∑ is a 1-type of M
 
 
 
+def: an n-type p over A is complete if foral L_A-formula ø(x1...xn)
+either ø in p or not ø in p
+the set of all complete n-types over A is denoted S_n^M(A)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+given a = (a1...an) in M^n and A≤M
+the complete type of a over A is denoted tp^M(a/A) = {ø(x)| ø is an L_A formula and M|=ø(a)}
+prp:  tp^M(a/A) is complete

@@ -72,3 +72,14 @@ so foral LA-formula ø(x)
 iff N_A |= ø(b) iff ø in tp^N(b/A) iff ø in tp^M(b/A)
 
 the forward direction will be next time
+
+
+
+
+example: let M = (Q,<) and A = Nat = {0,1,...}
+let p = tp^M(1/2/A)
+notice if r≤0 or 1≤r then r doesn't realize p
+say r in (0,1) then  there is some automorphism of Q st. ø(1/2) = r
+so r and 1/2 have the same type over A
+by QE for this struct, p determined by {0<x,x<1,x<2...}
+

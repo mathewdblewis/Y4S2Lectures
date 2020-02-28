@@ -1,0 +1,74 @@
+Fri 28 Feb 2020 10:31:13 PST
+Math493 lec021
+
+
+
+recall: suppose M is an L-struct A≤M
+An n-type over A is a set of LA-formulats
+∑(x1...xn) in n free vars st. 
+∑ is satisfied by an n-tuple in some model of Th(M_A)
+
+lemma: suppose M is an L-structure A≤M, ∑(x)
+is a set of LA-formulas, TFAE:
+1: ∑(x) is a type over A
+2: foral ø1...øk in ∑, Th(MA) |= "TEx, ø1 ^ ... øk"
+3: foral ø1...øk in ∑, MA |= "TEx, ø1 ^ ... øk"
+
+
+proof: 1=>2
+by def of type, TE N st. N|=Th(MA)
+and b in N st. FA ø in ∑, N|=ø(b)
+then FA ø1...øk in ∑, N|= "TEx, ø1^...øk"
+since Th(MA) is a complete LA-theory, Th(MA) |= "TEx ø1^...øk"
+
+proof: 2=>3 (trivial)
+
+proof: 3=>1
+let d be new constant symbols
+let T = Th(M_A) U ∑(d)
+if T is consistent, then ∑ is a type
+say ∆≤T is finite
+say ∆ intersect ∑(d) = {ø1(d)...øk(d)}
+by (3) M_A |= "TEx, ø1(x)...øk(x)"
+then we can choose a tuple from M to interpret d make MA
+to a model of ∆
+
+
+theorem: suppose M is an L-struct and A≤M and we have a type ∑(x) over A
+then there is an el-extension of M in which ∑ is realized
+
+proof: let d be new constants and let T = diag_el(M) U ∑(d)  = Th(Mm) U ∑(d)
+let ∆≤T be finite, ∆ intersect ∑(d) = {ø1(d)...øk(d)}
+by lemma, Mm can be expanded to a model of ∆
+
+
+note: suppsoe M≤N and A≤M
+then Th(MA) = Th(NA)
+so by def of type a type over A (in the sense of M)
+is the same as a type over A (in the sense of N)
+in particular, S_n^M(A) = S_n^N(A)
+
+cor: suppose M an L-struct, A≤M, p(x1...xn) a set of LA-formulas
+then p Sn^M(A) iff TE an L-struct N with M≤N and b1...bn in N st.
+p = tp^N(b1...bn,/A)    (recall tp is type)
+
+
+
+by the theorem: find N, M≤N,
+and b1...bn in N st. b1...bn realizes p
+then p≤tp^N(b1...bn/A)
+
+
+
+theorem: suppose M is an L-struct, A≤M
+a and b tuples of the same length from M
+tp^M(a/A) = tp^M(b/A) iff TE an N, M≤N and ø in Aut_A(N) st. ø(a)=b
+where Aut_A(N) = Aut(N_A)
+
+proof: (backwards)
+tp^M(a/A) = tp^N(a/A)     (by assignment 3)
+so foral LA-formula ø(x)
+ø in tp^M(a/A) iff ø in tp^N(a/A) iff N_A |= ø(a) iff N_A |= ø(ø(a))
+iff N_A |= ø(b) iff ø in tp^N(b/A) iff ø in tp^M(b/A)
+
+the forward direction will be next time

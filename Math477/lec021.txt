@@ -1,0 +1,76 @@
+Fri 28 Feb 2020 09:25:16 PST
+Math477 lec021
+
+recall s gets multiplied by u or d with prob (1±u/ø√∆)/2 respectively
+in the limit we have GBM(s,µ,ø^2)
+
+compute RNM and we get (amazingly)
+pup and pdown has form (1±(r-ø^2)/ø√∆)/2
+
+another way to model a GBM:
+s goes to s*e^(µ∆)
+then mult by e^(ø√∆) or e^(-ø√∆) with probs 1/2 each time
+
+
+
+
+
+projects:
+
+(1) Asian option:   (our project)
+payout = (average share price - K)`
+there is no good way to find its value so you simulate it and average it
+
+(2) euro rate of convergence:
+C = 1/e^(rt) ∑ nCk pup^k pdown^(n-k) (u^k d^(n-k)s - k)`
+
+(3) us put exercise boundary
+
+(4) barrier option:
+pays iff it goes above a barrier
+
+(5) pricing an increasing strike us call
+payout is (St-Ke^(at))`
+
+(6) same as (2) but for US puts
+
+
+back to lecture
+
+recall the risk neutral measure for St ~ GBM(s,r-ø^2/2,ø^2)
+
+important formula: Cost of product = E_rnm(Present value * payout)
+this concept was given the nobel memorial prize
+
+also RNM of St if St ~ GBM(s,µ,ø^2) is GBM(s,r-ø^2/2,ø^2)
+
+we will now price a euro-call:
+e^(-rt) E_rnm((St-K)`)
+
+St ~ s*LN((r-ø^2/2)t,ø^2t)
+St ~ se^(r-ø^2/2)t + ø√tN) where N ~ N(0,1)
+
+C = E(se^((r-ø^2/2)t + ø√tN) - K)`
+= ∫(se^(r-ø^2/2)t+ø(√t)x-K)` 1/(π√2) e^(-x^2/2) dx over -∞ to ∞
+
+
+black-scholes formula for price of euro option with strike K, init share price s
+and prevailing interest r, volatility ø
+C = sø(w) - Ke^(rt)ø(w-ø√t)
+where ø(x) is the CDF of the normal distribution
+w = [(r+ø^2/2)-ln(K/s)]/(ø√t)
+
+derivation:
+introduce I = 1 when St>k and 0 otherwise
+write St = se^((t-ø^2/2)t+ø√t*N)
+C = e^(-rt)E_RNM(St-K)`
+= e^(-rt) E_RNM(I*(St-K))        (because I*(St-K) = (St-K)`)
+= e^(-rt) E_RNM(I*St) - K e^(-rt) E_RNM(I)
+
+lets do E(I)    (we need E(I*st) also but will do so next time)
+
+E(I) = ø(w-ø√t)
+E(I) = Prob(I=1) = Prob(St>K) = Prob(se^((r-ø^2/2)t+ø√tN) > K)
+... = P(N > ø√t-w)
+
+

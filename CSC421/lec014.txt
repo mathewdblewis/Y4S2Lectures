@@ -1,0 +1,13 @@
+Mon  2 Mar 2020 12:50:31 PST
+CSC421 lec014
+
+recall we introduce a new data point that is true in all attributes for each catagory
+this prevents the existance of 0 probabilities
+
+
+
+
+
+
+
+

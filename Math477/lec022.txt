@@ -1,0 +1,54 @@
+Tue  3 Mar 2020 09:32:20 PST
+Math477 lec022
+
+S = E_RNM(e^(-rt)(St-K)`)
+= e^(-rt) E(I(St-K))
+where I = 1 for St>K and 0 otherwise
+
+
+important:
+St = se^((r-ø^2/2)t+ø√t*N)
+
+thus e^(-rt)E(I(St))
+= e^(-rt)se^((r-ø^2/2)t) E(I(e^(ø√tN)))
+= se^(-ø^2t/2) ∫e^(ø√tx)/√(2π) e^(-x^2/2) dx over x in [ø√t-w,∞)
+...
+
+C = e^(-rt) E(I(St-K))
+= e^(-rt)E(I(S)) - Ke^(-rt)ø(w-ø√t)
+where w = [(r+ø^2/2)t-ln(k/s)]/(ø√t)
+
+
+recall the cost of the call vs strike price graph
+it was decreasing, convex, equal to St at K=0 and equal to 0 in the K=∞ limit
+if K is close to 0, then w is large, and thus because ø is a cdf we get C = s-Ke^(-rt)
+if K is large, w is -∞, also ø(-∞) = 0, thus we get C = 0
+
+
+example:
+s = 55, K = 57, ø=0.2, r = 0.03, t=3
+note: all the values are quoted except for ø (volatility)
+you need to measure the value of ø
+he puts these values in and gets 1.5255
+
+how can you guess rough C values?
+ignore r
+S(1/4) = S0 * Ln(0,ø^2*1/4) = S0 * Ln(0,0.04*1/4) = S0 * e^(.1N)
+recall a normal is roughly ±1 with equal prob
+also e^x≈1+x so we get
+S(1/4) ≈ S) * (1±0.1)
+
+
+recall putcall parity: C-P = S-Ke^(-rt)
+like this we can price a euro put
+
+
+to do an american option, you know the payout at the end time
+and then make a tree and work backwards to find its value
+
+
+C = C(s,t,ø,K,r)
+Cs = ∂C/∂s
+Cs>0,Ck<0,Ct>0,Cø>0,Cr>0,Css>0,Ckk>0
+
+

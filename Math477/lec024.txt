@@ -1,0 +1,51 @@
+Fri  6 Mar 2020 09:21:38 PST
+Math477 lec024
+
+
+
+consider continuous time call on stock with strike K ex time t vol ø intrest r
+time step ∆ = t/n
+
+Pup = (e^(rt/n)-e^(-ø√(t/n)))/(e^(ø√(t/n))-e^(-ø√(t/n))) = (1+R-d)/(u-d)
+d = 1/u, u = e^(ø√(t/n))
+
+
+
+to replicate a call, # of shares you should have is ø(w)
+where w = [(r+ø^2/2)t_remaining - ln(K/S)]/(ø√t_remaining)
+
+the replication of a call is delta hedging
+∆ is the number of shares at all times
+∆ = ∂C/∂s = ø(w)
+
+
+calcfest:
+C(s,t,K,ø,r)
+Recall I = 1 when St>K, St = se^((r-ø^2/2)t+ø√tN)
+fact1: E(I) = ø(w-ø√t)
+fact2: e^(-rt)E_RNM(ISt) = sØ(w)
+fact3: e^(-rt)E_RNM(IStN) = 
+
+C = E(I(e^(-rt)St-K))
+∂C/∂. = E(I ∂/∂. (e^(-rt)(St-K)))
+
+we already did ∂C/∂s = Ø(w)        called "delta"
+∂C/∂k = E(I*(-e^(-rt))) = -e^(-rt)Ø(w-ø√t)     (this one has no name)
+(rho) ∂C/∂r = E(I*∂/∂r(e^(-rt)(se^((r-ø^2/2)t+ø√tN)-K)))
+= E(I(∂/∂r se^(-ø^2/t+ø√tN)-Ke^(-rt)))
+= kte^(-rt)Ø(w-ø√t)
+
+fact 3: e^(-rt)E(INSt) = s(Ø'(w)+ø√tØ(w))
+he proves this
+
+(vega) ∂C/∂ø = E(I*∂/∂ø(e^(-rt)(St-K)))
+= E(I*∂/∂ø(se^(-ø^2/2t+ø√tN)))
+= E(I*(s-øt+√tN)e^(-ø^2/2t+ø√tN))
+= e^(-rt) EIs(-øt+√tN)e^((r-ø^2/2)t+ø√tN)
+= e^(-rt) EISt(-øt+√tN)
+= -øt e^(-rt)E(IS)+√te^(-rt) EINSt
+= -øt sØ(w) + √ts (Ø'(w)+ø√tØ(w))
+= √tsØ'(w)
+
+recall Ø is the CDF of the standard normal distribution
+

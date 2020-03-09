@@ -1,0 +1,30 @@
+Mon  9 Mar 2020 13:00:15 PDT
+CSC421 lec015
+
+last time: exact inference and aproximate inference
+aproximate inference: simulate the system
+
+
+
+today: hidden markov models
+when it is sunny 80% of time you are happy
+when its ranny 40% of time you are happy
+P(S|S) = .8, P(R|S) = .2
+P(R|R) = .6, P(S|R) = .4
+
+the R/S to happy/unhappy probabilities are called emission probabilities
+the other ones are transition probabilities
+
+what is prob sunny given happy? use bayes formula
+
+if for three days bob is happy, grumpy, happy, what was the weather?
+
+for each possible hidden state, find the prob of that hidden state occuring
+given the visible state
+
+
+viterbi algorithm
+https://en.wikipedia.org/wiki/Viterbi_algorithm
+he explains this
+
+

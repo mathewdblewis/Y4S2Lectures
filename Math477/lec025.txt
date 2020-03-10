@@ -1,0 +1,80 @@
+Tue 10 Mar 2020 09:27:36 PDT
+Math477 lec025
+
+
+to learn more about SDEs (stochastic differential equations) ask Yu-Ting-Chen
+
+MIDTERM NEXT TUESDAY
+
+
+recall calc fest:
+let w = [(r+ø^2/2)t-ln(K/S)]/[ø√t]
+∂C/∂S = Ø(w)
+∂C/∂k = -e^(-rt)Ø(w-ø√t)
+∂C/∂r = tkø(w-ø√t)e^(-rt)
+∂C/∂ø = s√tØ(w)
+
+(theta) ∂C/∂t = E(I*∂/∂t e^(-rt)(St-K))
+= E(I* [-re^(-rt)(St-K) + e^(-rt)(∂/∂t St)])
+= -re^(-rt) E(ISt) + Kre^(-rt)E(I) + e^(-rt)E(I(∂/∂t St))
+recall St = se^((r-ø^2/2)t+ø√tN)
+= -re^(-rt) E(ISt) + Kre^(-rt)E(I) + e^(-rt)E(ISt*((r-ø^2/2)+øN/(2√t))))
+= -rsØ(w) + rKe^(-rt)Ø(w-ø√t) + (r-ø^2/2)sØ(w) + ø/(2√t) e^(-rt) E(INSt)
+= rKe^(-rt)Ø(w-ø√t) - ø^2/2 sØ(w) + ø/(2√t) (sØ'(w)+sø√t/Ø(w))
+= rKe^(-rt)Ø(w-ø√t) + øs/(2√t) Ø'(w)
+
+so in summary:
+∂C/∂t = rKe^(-rt)Ø(w-ø√t) + øs/(2√t) Ø'(w)
+
+
+
+now the second derivatives:
+∂^2C/∂s^2 = ∂/∂s ∂C/∂s = ∂/∂s Ø(w)
+∂w/∂s = ∂/∂s [(r+ø^2/2)t-ln(K/S)]/(ø√t)
+= ∂/∂s [(r+ø^2/2)t-ln(K)]/(ø√t) + ln(s)/(ø√t)
+= 1/(sø√t)
+
+thus ∂^2C/∂s^2 = Ø'(w)/(sø√t)
+thus C is convex in s
+
+
+now do ∂^2C/∂k^2
+∂C/∂k = -e^(-rt)Ø(w-ø√t)
+w = (constant) - lnK/[ø√t]
+thus ∂w/∂K = -1/[Kø√t]
+∂C/∂K = e^(-rt)Ø'(w-ø√t)/(kø√t)
+
+
+
+
+chapter 8:
+calls on dividend paying shares
+consider 3 models for how dividend is paid
+model 1: pay continuously at rate proportional to its current price, f*St
+
+formula: C = E(e^(-rt)(St-K)`)
+we need to modify the RNM to account for the dividend
+
+
+recall E_RNM(net payout of a bet) = 0
+this is the definition of RNM
+
+
+example bet: buy share at time 0 and sell at time t
+s0 = e^(-rt)E(St) + dividend
+dealing with this equation on its own is hard so we use a trick
+
+strategy: reinvest the dividends
+initially we own 1 share, by time t we own Nt shares
+∂Nt/∂t = Nt*fSt/St = fNt
+also N0 = 1, so we have Nt = e^(ft)
+let Mt = Nt*St = value of portfolio when you reinvest dividends in shares
+
+a new bet: buy share at 0 and reinvest all dividends, sell whole portfolio at time t
+s0 = E e^(-rt)Mt = E e^(-rt)Nt*St
+Mt = e^(ft)St
+Mt ~ GBM(s0,µ+f,ø^2)
+same as before so we get RNM of Mt is GBM(s0,r-ø^2/2,ø^2)
+St = e^(-ft)Mt
+RNM for St is GBM(s0,r-ø^2-f,ø^2)
+

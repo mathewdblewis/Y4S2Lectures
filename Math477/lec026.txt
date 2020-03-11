@@ -1,0 +1,86 @@
+Wed 11 Mar 2020 08:41:26 PDT
+Math477 lec026
+
+
+recall we reinvest dividends
+Nt = e^(ft)
+Mt ~ GBM(s,r-ø^2/2,ø^2)
+St ~ GBM(s,r-ø^2/2-f,ø^2)
+
+ERNM(PV net payout) = -s + e^(ft)E(e^(-rt)St)
+= -s + e^((f-r)t)E(se^((r-f-ø^2/t)t+ø√tN)
+
+recall this formula:
+GBM(µ,d,ø^2)  =>  se^(µt+ø√tN)
+
+IMPORTANT: GBM(µ,d,ø^2)  =>  se^(µt+ø√tN)
+
+
+-s + e^((f-r)t)E(se^((r-f-ø^2/t)t+ø√tN)
+= -s + e^((f-r)t)se^((r-f-ø^2/t)t) E(e^(ø√tN))
+
+recall e^(ø√tN) is LN(0,ø^2t)
+recall E LN(µ,ø^2) = e^(µ+ø^2/2)
+
+so we get:
+-s + e^((f-r)t)se^((r-f-ø^2/t)t) E(e^(ø√tN))
+= -s + e^((f-r)t)se^((r-f-ø^2/t)t) e^(µ+ø^2/2)
+= -s + s = 0
+
+
+
+lets price a call:
+St ~ GBM(s,r-f-ø^2/2,ø^2)
+C = e^(-rt)E(St-K)`
+= e^(-ft)C(s,t,K,r-f,ø^2)
+
+
+
+
+another model for a share that pays dividends
+share pays dividends: price the call
+dividend is paid at time td
+amount payed by dividend = q S(td)
+so the share price jumps down by qS(td) at time td
+S(td+) = (1-q)S(td-)
+
+now price a call, to do so, find RNM, as before, reinvest dividends
+Nt = number of shares owned
+the dividend pays qS(td-)
+and we buy more shares just after the price drops and get this many shares:
+qS(td-)/S(td+) = q/(1-q)
+
+the value of the portfolio Mt = Nt*St
+Mt ~ GBM(s,r-ø^2/2,ø^2)
+St = Mt for t<td and (1-q)Mt for t>td
+Mt ~ GBM(s,r-ø^2/2,ø^2)
+
+so the cost of the call is C = e^(-rt)E(St-K)`
+if t<td then we get e^(-rt)E(Mt-K)` = C(s,t,K,ø,r)
+if t>td = e^(-rt)E((1-q)Mt-K)` = C((1-q)s,t,K,ø,r)
+
+
+
+3: share pays dividend: price call
+payout D paid at time td, D is fixed beforehand
+is St a GBM? we know the price drops by D at time td
+we know for sure that S(td-)>D
+however this is not true for GBM's so this is not a GBM
+notice we have this lower bound: De^(-r(td-t))
+so we assume St is like so:
+St = {De^(-r(td-t)) + yt          t<td
+     {yt                          t>td
+
+thus yt ~ GBM(s-De^(-rtd),µ,ø^2)
+
+we should guess the following RNM:
+yt ~ GBM(s-De^(-rtd),r-ø^2/2,ø^2)
+
+lets see the payout of a bet under this measure
+bet1: buy share at t=0 and sell at t<td
+bet2: buy share at t=0 and sell at t>td
+
+ERNM(PV payout) = -s + E(e^(-rt)St)
+= -s + e^(-rt)(De^(-r(td-t)) + E(...
+
+

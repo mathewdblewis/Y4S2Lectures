@@ -81,6 +81,8 @@ bet1: buy share at t=0 and sell at t<td
 bet2: buy share at t=0 and sell at t>td
 
 ERNM(PV payout) = -s + E(e^(-rt)St)
-= -s + e^(-rt)(De^(-r(td-t)) + E(...
+= -s + e^(-rt)(De^(-r(td-t)) + E(s-De^(-rtd)
+...
+
 
 

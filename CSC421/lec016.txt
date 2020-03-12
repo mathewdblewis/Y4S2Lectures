@@ -1,0 +1,18 @@
+Thu 12 Mar 2020 12:59:04 PDT
+CSC421 lec016
+
+
+evaluator takes as input a vector of group truth labels and a corresponding vector
+of predicted labels and calcuates various classifications
+
+
+K-fold cross validation: (read about this)
+
+this is better than withholding a test set
+because it gives a better estimate of how accurate the thing
+you'll train will be, then you just train on all your data
+
+boost strap estimate:
+randomly get N samples with replacement from N instances
+
+

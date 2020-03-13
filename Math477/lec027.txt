@@ -1,0 +1,78 @@
+Fri 13 Mar 2020 09:13:26 PDT
+Math477 lec027
+
+recall the model:
+
+St = {De^(-r(td-t)) + yt          t<td
+     {yt                          t>td
+
+lets show yt ~ GBM(s-De^(-rtd),r-ø^2/2,ø^2) is the RNM
+
+recall we checked this for buying a share @ t for some t<td and got ERNM(payout) = 0
+now check buying share and selling at t>td
+
+(add D for the divdend)
+E_RNM(payout) = De^(-rtd) + -s + e^(-rt)E(St) = -s + e^(-rt)E(yt) + De^(-rtd)
+= -s + e^(-rt) E(s-De^(-rtd)) e^((r-ø^2/2)t+ø√tN) + De^(-rtd)
+= -s + (s-De^(-rtd))e^(-ø^2/2t)e^(ø^2/2t) + De^(-rtd)
+= De^(-rtd) - De^(-rtd) = 0
+
+
+now price a call on the stock
+case 1: t<td
+case 1a: K<De^(-r)(td-t)
+C = e^(-rt)E(St-K)` = e^(-rt)E(St-K)
+= e^(-rt)E(St) - Ke^(-rt)
+= s-Ke^(-rt)                (because E is a RNM)
+
+now say K>De^(-r)(td-t)
+C = e^(-rt) E(St-K)` = e^(-rt)E(De^((-r)(td-t)) + yt - K)`
+= e^(-rt)E(yt - (K-De^(-r(td-t))))`
+notice this is black and scholes with (K-De^(-r(td-t)))
+= C(s-De^(-rtd), t, K-De^(-r(td-t)),ø,r)
+
+
+case 2: td>t
+C = e^(-rt) E(yt-K)`
+this is just the standard black and scholes
+= C(s-De^(-rtd),t,K,ø,r)
+
+
+recall: C(r,t,K,ø,r) = sØ(w) - KØ(w-ø√t)
+(don't need to memorize this)
+w = [(r+ø^2/2)t-ln(K/s)]/[ø√t]
+
+
+
+
+
+Pricing American puts:
+payout = (K-Ss)`, exercise at any s in [0,t]
+to our knowledge there is no formula such as the black and scholes
+so we aproximate using binomial trees
+
+recall the exercise boundary, we sell when we go below it
+we need to find both the price and the excercise boundary
+we model this with binary trees
+
+S((k+1)∆) = {uS(k∆) with prob Pup
+            {dS(k∆) with prob Pdown
+recall pup = (1+R-d)/(u-d) where u,d = e^(±ø√∆)
+and 1+R = e^((r-ø^2/2)∆) and ∆ = t/n
+we are using the RNM
+we do so because this way the cost of the option is the E(payout)
+
+
+
+
+if your asked: "what is the prob that option is in the money"
+use the true probability, with drift µ, if asked for price use RNM
+
+recall if the price ends above the strike price K it has 0 value
+so we make a binary tree, nodes that end on above K have value 0
+so we can label much of the tree this way
+then we use the RNM to work backwards and label the rest of the tree
+
+the value at a node is max((pup*P1+pdn*P2)/(1+R),K-su^jd^k)
+use this to work backwards to fill the bintree
+

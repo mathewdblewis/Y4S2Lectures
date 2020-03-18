@@ -1,0 +1,43 @@
+Tue 17 Mar 2020 14:35:19 PDT
+Math477 lec028
+
+0249, i vs j
+1244, k>i or k>j
+
+
+pricing american puts:
+
+u,d = e^(±ø√∆)
+∆ = t/n
+i,j = number of steps, number of ups
+xij = value at (i,j) if not already excersized
+
+notice xnj = (K-su^jd^(n-j))`
+
+
+thus just as before we have this value if we sell now:
+(K-su^jd^(i-j))` 
+and this expected value if we hold:
+[pup*x_(i+1,j+1) + pdown*x_(i+1,j)]/(R+1)
+
+thus x(i,j) = max((K-su^jd^(i-j))`, [pup*x_(i+1,j+1) + pdown*x_(i+1,j)]/(R+1))
+
+
+
+assume ud = 1 (no drift)
+
+fact:
+1:  if xij = 0 then xik = 0 foral k>i
+2:  if its better to excerize at (i,j) then better to excercize at (i,k) foral k<j
+
+
+example:
+n = 5, s = 9, t = 1/4, K = 10, ø = .3, r = 0.06
+∆ = t/n = 1/20
+b = e^(-r∆) = 0.997   (discount factor)
+u = e^(ø√∆)  = 1.0694
+d = 1/u = 0.9331
+
+
+he then builds out the tree and finds the aproximate value of the american put
+
